@@ -47,23 +47,23 @@ class Random_Address extends CI_Controller {
 		$country_code = trim($segment);
 
 		// 简化：直接获取随机地址
-		$randomID = $this->Random_Address_model->get_address_minmax_id($country_code,'','');
+		$randomID = $this->Random_Address_model->get_address_minmax_id($country_code,'');
 		if(!$randomID || $randomID->min_id === null) {
 			redirect(base_url(), 'location', 301);
 		}
 		
 		$random_id = mt_rand($randomID->min_id, $randomID->max_id);
-		$address = $this->Random_Address_model->get_random_address($country_code,'','',$random_id);
+		$address = $this->Random_Address_model->get_random_address($country_code,'',$random_id);
 		if(!$address) {
 			redirect(base_url(), 'location', 301);
 		}
 
 		// 简化个人信息获取
-		$person_randomID = $this->Random_Address_model->get_person_profile_minmax_id(strtoupper($country_code),'');
+		$person_randomID = $this->Random_Address_model->get_person_profile_minmax_id(strtolower($country_code),'');
 		$person = null;
 		if($person_randomID && $person_randomID->min_id !== null) {
 			$person_random_id = mt_rand($person_randomID->min_id, $person_randomID->max_id);
-			$person = $this->Random_Address_model->get_person_profile(strtoupper($country_code),'',$person_random_id);
+			$person = $this->Random_Address_model->get_person_profile(strtolower($country_code),'',$person_random_id);
 		}
 
 		// 简化信用卡信息获取
@@ -123,9 +123,9 @@ class Random_Address extends CI_Controller {
 			redirect(base_url(), 'location', 301);
 		}
 
-		$person_randomID = $this->Random_Address_model->get_person_profile_minmax_id(strtoupper($country_code),'');
+		$person_randomID = $this->Random_Address_model->get_person_profile_minmax_id(strtolower($country_code),'');
 		$person_random_id = mt_rand($person_randomID->min_id, $person_randomID->max_id);
-		$person = $this->Random_Address_model->get_person_profile(strtoupper($country_code),'',$person_random_id);
+		$person = $this->Random_Address_model->get_person_profile(strtolower($country_code),'',$person_random_id);
 
 
 
