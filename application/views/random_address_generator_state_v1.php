@@ -90,22 +90,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
             <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">State/Province/Region</dt>
-            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium"><?php echo $address->state; ?></dd>
+            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
+              <span><?php echo $address->state; ?></span>
+              <button onclick="copyToClipboard('<?php echo addslashes($address->state); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                </svg>
+              </button>
+            </dd>
           </div>
 
           <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
             <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Zip/Postal Code</dt>
-            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium"><?php echo $address->zip_code; ?></dd>
+            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
+              <span><?php echo $address->zip_code; ?></span>
+              <button onclick="copyToClipboard('<?php echo addslashes($address->zip_code); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                </svg>
+              </button>
+            </dd>
           </div>
 
           <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
             <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Phone Number</dt>
-            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium"><?php echo $address->phone; ?></dd>
+            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
+              <span><?php echo $address->phone; ?></span>
+              <button onclick="copyToClipboard('<?php echo addslashes($address->phone); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                </svg>
+              </button>
+            </dd>
           </div>
 
           <div class="flex flex-col sm:flex-row sm:items-center">
             <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Country</dt>
-            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium"><?php echo $address->country; ?></dd>
+            <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
+              <span><?php echo $address->country; ?></span>
+              <button onclick="copyToClipboard('<?php echo addslashes($address->country); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                </svg>
+              </button>
+            </dd>
           </div>
         </dl>
       </div>
@@ -292,6 +320,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </main>
 
   <?php echo $footer; ?>
+
+  <script>
+  function copyToClipboard(text) {
+    // 创建临时文本区域
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+      // 执行复制命令
+      document.execCommand('copy');
+      
+      // 显示成功提示
+      const button = event.target.closest('button');
+      const originalHTML = button.innerHTML;
+      button.innerHTML = `
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      `;
+      button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+      button.classList.add('bg-green-600');
+      
+      // 2秒后恢复原状
+      setTimeout(() => {
+        button.innerHTML = originalHTML;
+        button.classList.remove('bg-green-600');
+        button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('复制失败:', err);
+    }
+    
+    // 清理临时元素
+    document.body.removeChild(textArea);
+  }
+  </script>
 
 </body>
 </html>

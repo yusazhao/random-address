@@ -1,6 +1,6 @@
 <footer class="bg-gray-50 border-t border-gray-200">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
       
       <!-- About -->
       <div>
@@ -22,7 +22,7 @@
       </div>
       
       <!-- Company -->
-      <div>
+      <div class="md:col-span-2 lg:col-span-1">
         <h6 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">RandomAddress</h6>
         <p class="text-gray-600 font-medium leading-relaxed text-sm lg:text-base">
           🚀 Professional random data generation tools for developers and businesses.
