@@ -6,10 +6,10 @@
       <div>
         <h6 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">Services</h6>
         <ul class="space-y-3">
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address/us">🇺🇸 US Address</a></li>
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address/uk">🇬🇧 UK Address</a></li>
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address/de">🇩🇪 DE Address</a></li>
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address/ca">🇨🇦 CA Address</a></li>
+          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address-generator/us">🇺🇸 US Address</a></li>
+          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address-generator/uk">🇬🇧 UK Address</a></li>
+          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address-generator/de">🇩🇪 DE Address</a></li>
+          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>random-address-generator/ca">🇨🇦 CA Address</a></li>
         </ul>
       </div>
       

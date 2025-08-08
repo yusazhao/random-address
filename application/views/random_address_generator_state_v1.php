@@ -135,7 +135,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           }else{echo $address->country; } ?> states</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             <?php foreach($state_list as $row): ?>
-              <a href="<?php echo base_url();?>random-address/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" class="text-blue-600 hover:text-blue-800 px-4 py-3 rounded-xl hover:bg-blue-50 transition-all duration-200 text-center font-medium border border-gray-200 hover:border-blue-300 hover:shadow-sm"><?php echo $row->state; ?> Random Address</a>
+                              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" class="text-blue-600 hover:text-blue-800 px-4 py-3 rounded-xl hover:bg-blue-50 transition-all duration-200 text-center font-medium border border-gray-200 hover:border-blue-300 hover:shadow-sm"><?php echo $row->state; ?> Random Address</a>
             <?php endforeach; ?>
           </div>
         </div>

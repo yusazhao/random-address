@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 mb-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <?php foreach($country_list as $row): ?>
-            <a href="<?php echo base_url();?>random-address/<?php echo strtolower($row->country_code); ?>" 
+                            <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
                class="group block p-6 bg-white/50 hover:bg-white/80 rounded-2xl border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg">
               <div class="flex items-center space-x-4">
                 <div class="text-3xl">🏠</div>

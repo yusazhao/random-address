@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             Simple. Reliable. Beautiful.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="<?php echo base_url();?>random-address/us" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium">
+                            <a href="<?php echo base_url();?>random-address-generator/us" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium">
                                 Get Started
                             </a>
 
@@ -82,10 +82,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <h2 class="text-2xl lg:text-3xl font-light text-gray-900 mb-4">Random Address</h2>
                             <p class="text-gray-600 mb-8 leading-relaxed">Generate authentic addresses from countries worldwide for testing and development.</p>
                             <div class="space-y-3">
-                                <a href="<?php echo base_url();?>random-address/us" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">US Address</a>
-                                <a href="<?php echo base_url();?>random-address/ca" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">Canada Address</a>
-                                <a href="<?php echo base_url();?>random-address/uk" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">UK Address</a>
-                                <a href="<?php echo base_url();?>random-address-countries" class="bg-gray-100 text-gray-700 rounded-full px-6 py-3 block text-center font-medium hover:bg-gray-200 transition-colors">All Countries</a>
+                                                <a href="<?php echo base_url();?>random-address-generator/us" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">US Address</a>
+                <a href="<?php echo base_url();?>random-address-generator/ca" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">Canada Address</a>
+                <a href="<?php echo base_url();?>random-address-generator/uk" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">UK Address</a>
+                <a href="<?php echo base_url();?>random-address-generator-countries" class="bg-gray-100 text-gray-700 rounded-full px-6 py-3 block text-center font-medium hover:bg-gray-200 transition-colors">All Countries</a>
                             </div>
                         </div>
 

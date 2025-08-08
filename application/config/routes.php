@@ -57,10 +57,10 @@ $route['default_controller'] = 'Random_Address/index';
 
 
 // Address routes (keep specific routes before general ones)
-$route['random-address-countries'] = 'Random_Address/random_address_countries';
+$route['random-address-generator-countries'] = 'Random_Address/random_address_countries';
 
-$route['random-address/(:any)-(:any)'] = 'Random_Address/random_address_state';
-$route['random-address/(:any)'] = 'Random_Address/index';
+$route['random-address-generator/(:any)-(:any)'] = 'Random_Address/random_address_state';
+$route['random-address-generator/(:any)'] = 'Random_Address/index';
 
 // Other pages
 $route['about-us'] = 'Footprint/aboutus';
