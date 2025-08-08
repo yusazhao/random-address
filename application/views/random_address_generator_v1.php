@@ -1,17 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+// 检查是否为州级页面（URL包含州代码）
+$is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-address-generator\/[a-z]{2}-[a-z]{2}$/', uri_string()));
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random <?php if(array_key_exists($address->country_code,$tier1_array)){
-     echo $tier1_array[$address->country_code];
-  }else{echo $address->country; } ?> Address Generator - Free Testing Data | RandomAddress</title>
+  <title><?php if($is_state_page): ?>
+    <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Random address generator in <?php echo $address->state;?>
+  <?php else: ?>
+    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator - Free Testing Data | RandomAddress
+  <?php endif; ?></title>
 
-  <meta name="description" content="Generate random <?php if(array_key_exists($address->country_code,$tier1_array)){
-     echo $tier1_array[$address->country_code];
-  }else{echo $address->country; } ?> addresses with street, city, state, ZIP code, phone numbers and personal data. Perfect for testing, development, forms and software validation. Free realistic address generator." />
+  <meta name="description" content="<?php if($is_state_page): ?>
+    Generate random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses in <?php echo $address->state;?> quickly. Perfect for testing and filling forms with <?php echo $address->state;?>-specific addresses like streets, cities, and zip codes.
+  <?php else: ?>
+    Generate random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses with street, city, state, ZIP code, phone numbers and personal data. Perfect for testing, development, forms and software validation. Free realistic address generator.
+  <?php endif; ?>" />
   
   <!-- SEO Meta Tags -->
   <meta name="keywords" content="random address generator, <?php echo strtolower($address->country); ?> addresses, fake address, test data, development tools, address generator, postal codes" />
@@ -52,10 +60,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <meta itemprop="position" content="1" />
           </li>
           <li class="text-gray-400 flex-shrink-0">/</li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
-            <span class="text-gray-900 font-medium truncate" itemprop="name"><?php echo $address->country; ?> Random Address</span>
-            <meta itemprop="position" content="2" />
-          </li>
+          <?php if($is_state_page): ?>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
+              <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="hover:text-blue-600 transition-colors truncate" itemprop="item">
+                <span itemprop="name" class="truncate"><?php echo $address->country; ?></span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li class="text-gray-400 flex-shrink-0">/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
+              <span class="text-gray-900 font-medium truncate" itemprop="name"><?php echo $address->state; ?> Random Address</span>
+              <meta itemprop="position" content="3" />
+            </li>
+          <?php else: ?>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
+              <span class="text-gray-900 font-medium truncate" itemprop="name"><?php echo $address->country; ?> Random Address</span>
+              <meta itemprop="position" content="2" />
+            </li>
+          <?php endif; ?>
         </ol>
       </nav>
       
@@ -372,7 +394,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       const originalHTML = button.innerHTML;
       const originalClasses = button.className;
       
-      // 显示复制成功图标和文字提�?
+      // 显示复制成功图标和文字提�?
       button.innerHTML = `
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>

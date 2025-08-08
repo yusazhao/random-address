@@ -147,7 +147,7 @@ class Random_Address extends CI_Controller {
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', $data, TRUE);
 
-		$this->load->view('random_address_generator_state_v1',$data);
+		$this->load->view('random_address_generator_v1',$data);
 
 	}
 
