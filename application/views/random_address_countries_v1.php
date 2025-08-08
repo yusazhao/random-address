@@ -22,16 +22,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
       <!-- Breadcrumb Navigation -->
       <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-2 text-lg font-bold text-gray-600" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <ol class="flex items-center space-x-1 sm:space-x-2 text-sm sm:text-lg font-bold text-gray-600 whitespace-nowrap overflow-hidden" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0">
             <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" itemprop="item">
               <span itemprop="name">Home</span>
             </a>
             <meta itemprop="position" content="1" />
           </li>
-          <li class="text-gray-400">/</li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span class="text-gray-900 font-medium" itemprop="name">All Countries</span>
+          <li class="text-gray-400 flex-shrink-0">/</li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
+            <span class="text-gray-900 font-medium truncate" itemprop="name">All Countries</span>
             <meta itemprop="position" content="2" />
           </li>
         </ol>
