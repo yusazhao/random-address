@@ -42,10 +42,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <main class="flex-1">
     <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
-      <?php /* 
       <!-- Breadcrumb Navigation -->
       <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-2 text-sm text-gray-600" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <ol class="flex items-center space-x-2 text-lg font-bold text-gray-600" itemscope itemtype="https://schema.org/BreadcrumbList">
           <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" itemprop="item">
               <span itemprop="name">Home</span>
@@ -54,19 +53,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </li>
           <li class="text-gray-400">/</li>
           <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <a href="<?php echo base_url(); ?>random-address-generator-countries" class="hover:text-blue-600 transition-colors" itemprop="item">
-              <span itemprop="name">Random Address</span>
-            </a>
+            <span class="text-gray-900 font-medium" itemprop="name"><?php echo $address->country; ?> Random Address</span>
             <meta itemprop="position" content="2" />
-          </li>
-          <li class="text-gray-400">/</li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span class="text-gray-900 font-medium" itemprop="name"><?php echo $address->country; ?></span>
-            <meta itemprop="position" content="3" />
           </li>
         </ol>
       </nav>
-      */ ?>
       
       <!-- Schema.org structured data -->
       <script type="application/ld+json">

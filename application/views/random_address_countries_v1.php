@@ -20,6 +20,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <main class="flex-1">
     <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Breadcrumb Navigation -->
+      <nav class="mb-6" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-lg font-bold text-gray-600" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" itemprop="item">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li class="text-gray-400">/</li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span class="text-gray-900 font-medium" itemprop="name">All Countries</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+      
       <h1 class="text-3xl lg:text-4xl font-light text-gray-900 mb-8">Random Address Generator by Countries</h1>
 
       <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 mb-12">
