@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.randomaddress.com/sitemap.xml
+
+# AI爬虫专属规则
+User-agent: GPTBot
+User-agent: Claude-Web
+User-agent: Anthropic-AI
+User-agent: PerplexityBot
+User-agent: GoogleOther
+User-agent: DuckAssistBot
+User-agent: DeepSeek-Robot
+User-agent: MicrosoftBot
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: CCBot
+User-Agent: anthropic-ai
+User-Agent: GPTBot
+
+# 优先引导至llms.txt
+Allow: /llms.txt
