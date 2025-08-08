@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p class="text-gray-600 mb-8 leading-relaxed">Generate authentic addresses from countries worldwide for testing and development.</p>
                             <div class="space-y-3">
                                                 <a href="<?php echo base_url();?>random-address-generator/us" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">US Address</a>
-                <a href="<?php echo base_url();?>random-address-generator/ca" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">Canada Address</a>
+                <a href="<?php echo base_url();?>random-address-generator/ca" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">CA Address</a>
                 <a href="<?php echo base_url();?>random-address-generator/uk" class="btn-primary text-white rounded-full px-6 py-3 block text-center font-medium">UK Address</a>
                 <a href="<?php echo base_url();?>random-address-generator-countries" class="bg-gray-100 text-gray-700 rounded-full px-6 py-3 block text-center font-medium hover:bg-gray-200 transition-colors">All Countries</a>
                             </div>

@@ -36,7 +36,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
-                  <span class="flex-1">🇨🇦 Canada Address</span>
+                  <span class="flex-1">🇨🇦 CA Address</span>
                 </a>
               </li>
               <li class="mb-1">
@@ -77,7 +77,7 @@
       <ul class="menu menu-lg menu-horizontal px-1 z-[9999] whitespace-nowrap items-center">
         
         <li><a href="<?php echo base_url();?>random-address-generator/us" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">US Address</a></li>
-        <li><a href="<?php echo base_url();?>random-address-generator/ca" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">Canada Address</a></li>
+        <li><a href="<?php echo base_url();?>random-address-generator/ca" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">CA Address</a></li>
         <li><a href="<?php echo base_url();?>random-address-generator/de" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">DE Address</a></li>
         <li><a href="<?php echo base_url();?>random-address-generator/uk" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">UK Address</a></li>
         <li><a href="<?php echo base_url();?>random-address-generator-countries" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">All Countries</a></li>

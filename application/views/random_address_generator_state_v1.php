@@ -140,6 +140,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
 
+        <div>
+          <h2 class="text-2xl font-light text-gray-900 mb-6">All Countries</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+            <?php foreach($country_list as $row): ?>
+              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" class="text-blue-600 hover:text-blue-800 px-4 py-3 rounded-xl hover:bg-blue-50 transition-all duration-200 text-center font-medium border border-gray-200 hover:border-blue-300 hover:shadow-sm"><?php echo $row->country; ?> Random Address</a>
+            <?php endforeach; ?>
+          </div>
+        </div>
+
         <!-- Informational Content Section -->
         <div class="mt-16">
           <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">

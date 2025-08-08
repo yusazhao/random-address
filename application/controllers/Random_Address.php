@@ -77,10 +77,14 @@ class Random_Address extends CI_Controller {
 		// 加载州列表
 		$state_list = $this->Random_Address_model->get_state_list($country_code);
 		
+		// 加载国家列表
+		$country_list = $this->Random_Address_model->get_country_list();
+		
 		$data['creditcard'] = $creditcard;
 		$data['person'] = $person;
 		$data['address'] = $address;
 		$data['state_list'] = $state_list;
+		$data['country_list'] = $country_list;
 		$data['tier1_array'] = $tier1_array;
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
@@ -129,11 +133,15 @@ class Random_Address extends CI_Controller {
 		$credit_random_id = mt_rand($credit_randomID->min_id, $credit_randomID->max_id);
 		$creditcard = $this->Random_Address_model->get_creditcard('',$credit_random_id);
 		
+		// 加载国家列表
+		$country_list = $this->Random_Address_model->get_country_list();
+		
 		$data['creditcard'] = $creditcard;
 		$data['person'] = $person;
 
 		$data['address'] = $address;
 		$data['state_list'] = $state_list;
+		$data['country_list'] = $country_list;
 		$data['tier1_array'] = $tier1_array;
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
