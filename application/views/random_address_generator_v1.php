@@ -192,6 +192,7 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
       <div class="mb-12">
         <h2 class="text-3xl lg:text-4xl font-light text-gray-900 mb-6">Random Person Information</h2>
         <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
+          <?php if($person): ?>
           <dl class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Full Name</dt>
@@ -241,6 +242,7 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               </dd>
             </div>
           </dl>
+          <?php endif; ?>
         </div>
       </div>
 
@@ -250,6 +252,7 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
 
 
 
+      <?php if($creditcard): ?>
       <div class="mb-12">
         <h2 class="text-3xl lg:text-4xl font-light text-gray-900 mb-6">Random Credit Card</h2>
         <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
@@ -304,6 +307,7 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
           </dl>
         </div>
       </div>
+      <?php endif; ?>
 
       <div class="space-y-12">
         <div>

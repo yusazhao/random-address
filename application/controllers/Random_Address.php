@@ -124,14 +124,20 @@ class Random_Address extends CI_Controller {
 		}
 
 		$person_randomID = $this->Random_Address_model->get_person_profile_minmax_id(strtolower($country_code),'');
-		$person_random_id = mt_rand($person_randomID->min_id, $person_randomID->max_id);
-		$person = $this->Random_Address_model->get_person_profile(strtolower($country_code),'',$person_random_id);
+		$person = null;
+		if($person_randomID && $person_randomID->min_id !== null) {
+			$person_random_id = mt_rand($person_randomID->min_id, $person_randomID->max_id);
+			$person = $this->Random_Address_model->get_person_profile(strtolower($country_code),'',$person_random_id);
+		}
 
 
 
 		$credit_randomID = $this->Random_Address_model->get_creditcard_minmax_id('');
-		$credit_random_id = mt_rand($credit_randomID->min_id, $credit_randomID->max_id);
-		$creditcard = $this->Random_Address_model->get_creditcard('',$credit_random_id);
+		$creditcard = null;
+		if($credit_randomID && $credit_randomID->min_id !== null) {
+			$credit_random_id = mt_rand($credit_randomID->min_id, $credit_randomID->max_id);
+			$creditcard = $this->Random_Address_model->get_creditcard('',$credit_random_id);
+		}
 		
 		// 加载国家列表
 		$country_list = $this->Random_Address_model->get_country_list();

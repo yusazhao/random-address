@@ -78,7 +78,7 @@ class Random_Address_model extends CI_Model {
 
     public function get_person_profile_minmax_id($country_code,$state_code){
 
-        if('UK' == $country_code){
+        if('UK' == strtoupper($country_code)){
                     $country_code = 'gb';
             }
 
@@ -100,7 +100,7 @@ class Random_Address_model extends CI_Model {
     public function get_person_profile($country_code,$state_code,$random_id)
     {
 
-        if('UK' == $country_code){
+        if('UK' == strtoupper($country_code)){
                 $country_code = 'gb';
         }
 
