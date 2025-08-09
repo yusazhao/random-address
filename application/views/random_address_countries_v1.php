@@ -45,9 +45,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
                class="group block p-6 bg-white/50 hover:bg-white/80 rounded-2xl border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg">
               <div class="flex items-center space-x-4">
-                <div class="text-3xl">🏠</div>
+                <div class="flex-shrink-0">
+                  <?php 
+                  $flag_code = strtolower($row->country_code);
+                  // 特殊处理：UK使用GB的国旗
+                  if($flag_code == 'uk') {
+                    $flag_code = 'gb';
+                  }
+                  ?>
+                  <img src="<?php echo base_url();?>static/img/flags/<?php echo $flag_code; ?>_200_150.svg" 
+                       alt="<?php echo $row->country; ?> flag" 
+                       class="w-12 h-9 object-cover rounded shadow-sm"
+                       onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+                </div>
                 <div>
-                  <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"><?php echo $row->country; ?> Random Address</h3>
+                  <h3 class="font-semibold transition-colors">
+                    <span class="text-blue-700 group-hover:text-blue-800"><?php echo $row->country; ?></span>
+                    <span class="text-gray-600 group-hover:text-gray-700"> Random Address</span>
+                  </h3>
                 </div>
               </div>
             </a>

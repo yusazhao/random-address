@@ -323,9 +323,32 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
 
         <div>
           <h2 class="text-2xl font-light text-gray-900 mb-6">All Countries</h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php foreach($country_list as $row): ?>
-              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" class="text-blue-600 hover:text-blue-800 px-4 py-3 rounded-xl hover:bg-blue-50 transition-all duration-200 text-center font-medium border border-gray-200 hover:border-blue-300 hover:shadow-sm"><?php echo $row->country; ?> Random Address</a>
+              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
+                 class="group block p-4 bg-white/50 hover:bg-white/80 rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-md">
+                <div class="flex items-center space-x-3">
+                  <div class="flex-shrink-0">
+                    <?php 
+                    $flag_code = strtolower($row->country_code);
+                    // 特殊处理：UK使用GB的国旗
+                    if($flag_code == 'uk') {
+                      $flag_code = 'gb';
+                    }
+                    ?>
+                    <img src="<?php echo base_url();?>static/img/flags/<?php echo $flag_code; ?>_200_150.svg" 
+                         alt="<?php echo $row->country; ?> flag" 
+                         class="w-10 h-8 object-cover rounded shadow-sm"
+                         onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="font-medium transition-colors">
+                      <span class="text-blue-700 group-hover:text-blue-800"><?php echo $row->country; ?></span>
+                      <span class="text-gray-600 group-hover:text-gray-700"> Random Address</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
             <?php endforeach; ?>
           </div>
         </div>
