@@ -11,17 +11,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <title><?php if($is_state_page): ?>
     <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Random address generator in <?php echo $address->state;?>
   <?php else: ?>
-    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator - Free Testing Data | RandomAddress
+    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | Random Address | Random Address Generator
   <?php endif; ?></title>
 
   <meta name="description" content="<?php if($is_state_page): ?>
-    Generate random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses in <?php echo $address->state;?> quickly. Perfect for testing and filling forms with <?php echo $address->state;?>-specific addresses like streets, cities, and zip codes.
+    Ensure 100% success for account registration with our high-quality, real <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses in <?php echo $address->state;?>. Simply click to copy and paste.
   <?php else: ?>
-    Generate random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses with street, city, state, ZIP code, phone numbers and personal data. Perfect for testing, development, forms and software validation. Free realistic address generator.
+    Ensure 100% success for account registration with our high-quality, real <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses. Simply click to copy and paste.
   <?php endif; ?>" />
   
   <!-- SEO Meta Tags -->
-  <meta name="keywords" content="random address generator, <?php echo strtolower($address->country); ?> addresses, fake address, test data, development tools, address generator, postal codes" />
+  <meta name="keywords" content="random address, random address generator, random <?php echo strtolower($address->country); ?> addresses generator, fake address, fake address generator" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="RandomAddress" />
   
