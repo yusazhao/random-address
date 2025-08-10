@@ -1,8 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-// 检查是否为州级页面（URL包含州代码）
-$is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-address-generator\/[a-z]{2}-[a-z]{2}$/', uri_string()));
+// $is_state_page 变量由控制器传递，无需在这里计算
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -39,42 +38,51 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
   <meta name="twitter:description" content="Generate random addresses with street, city, state, ZIP code for testing purposes." />
 
 
-<link href="<?php echo base_url();?>static/css/output.css?v=1.2" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
 
 
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+<body class="min-h-screen flex flex-col bg-gradient-main">
 
   <?php echo $header; ?>
 
   <main class="flex-1">
-    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-4">
       <!-- Breadcrumb Navigation -->
       <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-1 sm:space-x-2 text-sm sm:text-lg font-bold text-gray-600 whitespace-nowrap overflow-hidden" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0">
-            <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" itemprop="item">
-              <span itemprop="name">Home</span>
+        <div class="text-base sm:text-xl lg:text-2xl font-bold text-gray-700" style="display: flex; align-items: center; flex-wrap: wrap; gap: 2px;">
+          <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 0;">Home</a>
+          <span class="text-gray-400" style="flex-shrink: 0;">/</span>
+          <?php if($is_state_page): ?>
+            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 1; min-width: 0;">
+              <?php echo $address->country; ?>
             </a>
+            <span class="text-gray-400" style="flex-shrink: 0;">/</span>
+            <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;"><?php echo $address->state; ?> Random Address</span>
+          <?php else: ?>
+            <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;"><?php echo $address->country; ?> Random Address</span>
+          <?php endif; ?>
+        </div>
+        <!-- Hidden breadcrumb for SEO -->
+        <ol class="hidden" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="<?php echo base_url(); ?>" itemprop="item"><span itemprop="name">Home</span></a>
             <meta itemprop="position" content="1" />
           </li>
-          <li class="text-gray-400 flex-shrink-0">/</li>
           <?php if($is_state_page): ?>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
-              <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="hover:text-blue-600 transition-colors truncate" itemprop="item">
-                <span itemprop="name" class="truncate"><?php echo $address->country; ?></span>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" itemprop="item">
+                <span itemprop="name"><?php echo $address->country; ?></span>
               </a>
               <meta itemprop="position" content="2" />
             </li>
-            <li class="text-gray-400 flex-shrink-0">/</li>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
-              <span class="text-gray-900 font-medium truncate" itemprop="name"><?php echo $address->state; ?> Random Address</span>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span itemprop="name"><?php echo $address->state; ?> Random Address</span>
               <meta itemprop="position" content="3" />
             </li>
           <?php else: ?>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
-              <span class="text-gray-900 font-medium truncate" itemprop="name"><?php echo $address->country; ?> Random Address</span>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span itemprop="name"><?php echo $address->country; ?> Random Address</span>
               <meta itemprop="position" content="2" />
             </li>
           <?php endif; ?>
@@ -104,8 +112,8 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
           echo $tier1_array[$address->country_code];
         }else{echo $address->country; } ?> Random Address Generator</h1>
         <a href="<?php echo base_url().uri_string(); ?>" 
-           class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all duration-200 hover:shadow-lg sm:shrink-0">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all duration-200 hover:shadow-lg sm:shrink-0 no-underline whitespace-nowrap">
+          <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
           New Random Address in <?php echo strtoupper($address->country_code); ?>
@@ -118,8 +126,8 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Street</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->street; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->street); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($address->street); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
                 </button>
@@ -130,10 +138,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">City/Town</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->city; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->city); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($address->city); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -142,10 +151,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">State/Province/Region</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->state; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->state); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($address->state); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -154,10 +164,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Zip/Postal Code</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->zip_code; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->zip_code); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($address->zip_code); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -166,10 +177,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Phone Number</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->phone; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->phone); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($address->phone); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -178,8 +190,8 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Country</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->country; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->country); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($address->country); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
                 </button>
@@ -198,10 +210,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Full Name</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->full_name; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->full_name); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($person->full_name); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -210,10 +223,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Gender</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->gender; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->gender); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($person->gender); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -222,10 +236,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Birthday</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->birthday; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->birthday); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($person->birthday); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -234,10 +249,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Social Security Number</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->ssn; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->ssn); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($person->ssn); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -261,10 +277,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Credit card brand</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_type; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_type); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_type); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -273,10 +290,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Credit card number</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_number; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_number); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_number); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -285,10 +303,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Expire</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_expire; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_expire); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_expire); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -297,10 +316,11 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">CVV</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_cvv; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_cvv); ?>')" class="ml-4 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_cvv); ?>')" class="copy-btn ml-4 flex items-center">
+                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
+
                 </button>
               </dd>
             </div>
@@ -321,9 +341,9 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
           </div>
         </div>
 
-        <div>
+        <div class="mt-16">
           <h2 class="text-2xl font-light text-gray-900 mb-6">All Countries</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             <?php foreach($country_list as $row): ?>
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
                  class="group block p-4 bg-white/50 hover:bg-white/80 rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-md">
@@ -404,47 +424,7 @@ $is_state_page = (strpos(uri_string(), '-') !== false && preg_match('/^random-ad
 
       <?php echo $footer; ?>
 
-  <script>
-  function copyToClipboard(text) {
-    // 创建临时文本区域
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.select();
-    
-    try {
-      // 执行复制命令
-      document.execCommand('copy');
-      
-      // 显示成功提示
-      const button = event.target.closest('button');
-      const originalHTML = button.innerHTML;
-      const originalClasses = button.className;
-      
-      // 显示复制成功图标和文字提�?
-      button.innerHTML = `
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-        </svg>
-        <span class="ml-1 text-xs">Copied!</span>
-      `;
-      button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-      button.classList.add('bg-green-600');
-      
-      // 1.5秒后恢复原状
-      setTimeout(() => {
-        button.innerHTML = originalHTML;
-        button.className = originalClasses;
-      }, 1500);
-      
-    } catch (err) {
-      console.error('复制失败:', err);
-    }
-    
-    // 清理临时元素
-    document.body.removeChild(textArea);
-  }
-  </script>
+  <script src="<?php echo base_url();?>static/js/custom.js"></script>
 
   
 

@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RandomAddress - Professional Random Data Generator</title>
-    <link href="<?php echo base_url();?>static/css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
     <style>
         .hero-section {
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);

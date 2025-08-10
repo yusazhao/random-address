@@ -86,6 +86,7 @@ class Random_Address extends CI_Controller {
 		$data['state_list'] = $state_list;
 		$data['country_list'] = $country_list;
 		$data['tier1_array'] = $tier1_array;
+		$data['is_state_page'] = false; // 国家级页面
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', $data, TRUE);
@@ -149,6 +150,7 @@ class Random_Address extends CI_Controller {
 		$data['state_list'] = $state_list;
 		$data['country_list'] = $country_list;
 		$data['tier1_array'] = $tier1_array;
+		$data['is_state_page'] = true; // 州级页面
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', $data, TRUE);

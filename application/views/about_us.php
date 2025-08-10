@@ -7,11 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About US - RandomAddress</title>
 
-<link href="<?php echo base_url();?>static/css/output.css?v=<?php echo time(); ?>" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
 
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+<body class="min-h-screen flex flex-col bg-gradient-main">
 
   <?php echo $header; ?>
 

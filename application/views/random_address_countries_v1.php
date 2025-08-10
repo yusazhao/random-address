@@ -10,28 +10,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 <meta name="description" content="Explore a comprehensive list of random address generators by country, providing users with reliable, country-specific address data for various uses such as testing, form-filling, and more." />
 
-<link href="<?php echo base_url();?>static/css/output.css?v=<?php echo time(); ?>" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
 
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+<body class="min-h-screen flex flex-col bg-gradient-main">
 
   <?php echo $header; ?>
 
   <main class="flex-1">
-    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-4">
       <!-- Breadcrumb Navigation -->
       <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-1 sm:space-x-2 text-sm sm:text-lg font-bold text-gray-600 whitespace-nowrap overflow-hidden" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0">
-            <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" itemprop="item">
-              <span itemprop="name">Home</span>
-            </a>
+        <div class="text-base sm:text-xl lg:text-2xl font-bold text-gray-700" style="display: flex; align-items: center; flex-wrap: wrap; gap: 2px;">
+          <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 0;">Home</a>
+          <span class="text-gray-400" style="flex-shrink: 0;">/</span>
+          <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;">All Countries</span>
+        </div>
+        <!-- Hidden breadcrumb for SEO -->
+        <ol class="hidden" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="<?php echo base_url(); ?>" itemprop="item"><span itemprop="name">Home</span></a>
             <meta itemprop="position" content="1" />
           </li>
-          <li class="text-gray-400 flex-shrink-0">/</li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="flex-shrink-0 min-w-0">
-            <span class="text-gray-900 font-medium truncate" itemprop="name">All Countries</span>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">All Countries</span>
             <meta itemprop="position" content="2" />
           </li>
         </ol>

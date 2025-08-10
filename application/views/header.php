@@ -1,158 +1,184 @@
-<div class="navbar bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 relative z-50 min-h-[80px] sm:min-h-[90px] lg:min-h-[80px]">
-  <div class="container mx-auto px-3 sm:px-4 lg:px-6 relative">
-    <div class="navbar-start">
-      <div class="dropdown lg:hidden relative overflow-visible">
-        <div tabindex="0" role="button" class="btn btn-ghost hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl px-3 sm:px-4 py-2 sm:py-3 flex items-center" onclick="toggleMobileMenu()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 sm:h-7 sm:w-7 text-gray-700"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <span class="text-sm sm:text-base font-semibold text-gray-700 ml-1 sm:ml-2">Menu</span>
-        </div>
-        <ul
-          id="mobile-menu"
-          class="menu menu-lg dropdown-content bg-white rounded-2xl z-[9999] w-80 max-w-[95vw] p-4 shadow-2xl border border-gray-200 hidden absolute top-full left-0 mt-2 max-h-[80vh] overflow-y-auto">
-          
-          <li class="mb-1">
-                            <a href="<?php echo base_url();?>random-address-generator/us" class="rounded-xl hover:bg-blue-50 transition-all duration-300 text-sm font-semibold text-gray-800 py-3 px-4 flex items-center w-full">
-                  <svg class="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <span class="flex-1">🇺🇸 US Address</span>
-                </a>
-              </li>
-              <li class="mb-1">
-                <a href="<?php echo base_url();?>random-address-generator/ca" class="rounded-xl hover:bg-blue-50 transition-all duration-300 text-sm font-semibold text-gray-800 py-3 px-4 flex items-center w-full">
-                  <svg class="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <span class="flex-1">🇨🇦 CA Address</span>
-                </a>
-              </li>
-              <li class="mb-1">
-                <a href="<?php echo base_url();?>random-address-generator/de" class="rounded-xl hover:bg-blue-50 transition-all duration-300 text-sm font-semibold text-gray-800 py-3 px-4 flex items-center w-full">
-                  <svg class="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <span class="flex-1">🇩🇪 DE Address</span>
-                </a>
-              </li>
-              <li class="mb-1">
-                <a href="<?php echo base_url();?>random-address-generator/uk" class="rounded-xl hover:bg-blue-50 transition-all duration-300 text-sm font-semibold text-gray-800 py-3 px-4 flex items-center w-full">
-                  <svg class="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <span class="flex-1">🇬🇧 UK Address</span>
-                </a>
-              </li>
-              <li class="mb-1">
-                <a href="<?php echo base_url();?>random-address-generator-countries" class="rounded-xl hover:bg-blue-50 transition-all duration-300 text-sm font-semibold text-gray-800 py-3 px-4 flex items-center w-full">
-                  <svg class="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <span class="flex-1">🌍 All Countries</span>
-                </a>
-          </li>
-
-
-
-        </ul>
-      </div>
-      <a class="btn btn-ghost text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 hover:text-blue-600 transition-all duration-200 px-2 sm:px-4 py-6 sm:py-8 lg:py-0 ml-2 sm:ml-0" href="<?php echo base_url();?>" title="RandomAddress - Free Random Data Generator for Testing and Development">RandomAddress</a>
-    </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-lg menu-horizontal px-1 z-[9999] whitespace-nowrap items-center">
-        
-        <li><a href="<?php echo base_url();?>random-address-generator/us" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">US Address</a></li>
-        <li><a href="<?php echo base_url();?>random-address-generator/ca" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">CA Address</a></li>
-        <li><a href="<?php echo base_url();?>random-address-generator/de" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">DE Address</a></li>
-        <li><a href="<?php echo base_url();?>random-address-generator/uk" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">UK Address</a></li>
-        <li><a href="<?php echo base_url();?>random-address-generator-countries" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-xl transition-all duration-200 font-medium flex items-center">All Countries</a></li>
-
-
-
-         
+<!-- Navigation Bar -->
+<nav class="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20 md:h-22 lg:h-26">
       
-       
-
-   
-
-       
-      </ul>
-    </div>
-    <div class="navbar-end">
-      <!-- 空白区域保持平衡 -->
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="<?php echo base_url();?>" class="text-2xl md:text-3xl lg:text-custom-logo xl:text-4xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200" title="RandomAddress - Free Random Data Generator for Testing and Development">
+          RandomAddress
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex lg:items-center lg:space-x-4">
+        <a href="<?php echo base_url();?>random-address-generator/us" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+          US Address
+        </a>
+        <a href="<?php echo base_url();?>random-address-generator/ca" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+          CA Address
+        </a>
+        <a href="<?php echo base_url();?>random-address-generator/de" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+          DE Address
+        </a>
+        <a href="<?php echo base_url();?>random-address-generator/uk" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+          UK Address
+        </a>
+        <a href="<?php echo base_url();?>random-address-generator-countries" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+          All Countries
+        </a>
+      </div>
+      
+      <!-- Tablet Navigation -->
+      <div class="hidden md:flex lg:hidden">
+        <div class="relative">
+          <button id="tablet-menu-button" class="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+            <span>Menu</span>
+            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="tablet-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 hidden z-50">
+            <div class="py-1">
+              <a href="<?php echo base_url();?>random-address-generator/us" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇺🇸 US Address</a>
+              <a href="<?php echo base_url();?>random-address-generator/ca" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇨🇦 CA Address</a>
+              <a href="<?php echo base_url();?>random-address-generator/de" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇩🇪 DE Address</a>
+              <a href="<?php echo base_url();?>random-address-generator/uk" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇬🇧 UK Address</a>
+              <a href="<?php echo base_url();?>random-address-generator-countries" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🌍 All Countries</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="flex items-center px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 border border-gray-200 hover:border-blue-300" aria-label="Toggle menu">
+          <svg id="menu-icon" class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="h-5 w-5 mr-2 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+          <span class="text-sm font-medium">Menu</span>
+        </button>
+      </div>
     </div>
   </div>
-</div>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 absolute top-full left-0 right-0 shadow-lg" style="z-index: 9999;">
+    <div class="px-4 py-3 space-y-2">
+      <a href="<?php echo base_url();?>random-address-generator/us" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+        <span class="mr-3">🇺🇸</span>
+        <span>US Address</span>
+      </a>
+      <a href="<?php echo base_url();?>random-address-generator/ca" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+        <span class="mr-3">🇨🇦</span>
+        <span>CA Address</span>
+      </a>
+      <a href="<?php echo base_url();?>random-address-generator/de" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+        <span class="mr-3">🇩🇪</span>
+        <span>DE Address</span>
+      </a>
+      <a href="<?php echo base_url();?>random-address-generator/uk" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+        <span class="mr-3">🇬🇧</span>
+        <span>UK Address</span>
+      </a>
+      <a href="<?php echo base_url();?>random-address-generator-countries" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+        <span class="mr-3">🌍</span>
+        <span>All Countries</span>
+      </a>
+    </div>
+  </div>
+</nav>
 
 <script>
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobile-menu');
-  
-  if (menu.classList.contains('hidden')) {
-    menu.classList.remove('hidden');
-  } else {
-    menu.classList.add('hidden');
-  }
-}
-
-// 点击页面其他地方时关闭移动端菜单
-document.addEventListener('click', function(event) {
-  const menu = document.getElementById('mobile-menu');
-  const button = event.target.closest('[onclick="toggleMobileMenu()"]');
-  
-  if (!button && !menu.contains(event.target)) {
-    menu.classList.add('hidden');
-  }
-});
-
-// 桌面端下拉菜单互斥逻辑
+// Navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
-  const desktopDropdowns = document.querySelectorAll('.desktop-dropdown');
+  // Mobile menu elements
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
   
-  desktopDropdowns.forEach(function(dropdown) {
-    const summary = dropdown.querySelector('summary');
-    
-    summary.addEventListener('click', function(event) {
-      // 检查当前dropdown是否即将打开
-      const isOpening = !dropdown.hasAttribute('open');
+  // Tablet menu elements
+  const tabletMenuButton = document.getElementById('tablet-menu-button');
+  const tabletMenu = document.getElementById('tablet-menu');
+  
+  // Mobile menu toggle
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isHidden = mobileMenu.classList.contains('hidden');
       
-      if (isOpening) {
-        // 关闭所有其他的desktop dropdown
-        desktopDropdowns.forEach(function(otherDropdown) {
-          if (otherDropdown !== dropdown && otherDropdown.hasAttribute('open')) {
-            otherDropdown.removeAttribute('open');
-          }
-        });
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
       }
     });
-  });
+  }
   
-  // 点击页面其他地方时关闭所有桌面端下拉菜单
+  // Tablet menu toggle
+  if (tabletMenuButton && tabletMenu) {
+    tabletMenuButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      tabletMenu.classList.toggle('hidden');
+    });
+  }
+  
+  // Close menus when clicking outside
   document.addEventListener('click', function(event) {
-    // 检查点击的元素是否在任何dropdown内
-    const clickedInsideDropdown = event.target.closest('.desktop-dropdown');
+    // Close mobile menu
+    if (mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
     
-    if (!clickedInsideDropdown) {
-      // 关闭所有desktop dropdown
-      desktopDropdowns.forEach(function(dropdown) {
-        dropdown.removeAttribute('open');
-      });
+    // Close tablet menu
+    if (tabletMenu && !tabletMenu.contains(event.target) && !tabletMenuButton.contains(event.target)) {
+      tabletMenu.classList.add('hidden');
     }
   });
+  
+  // Close mobile menu when window is resized to larger screen
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768 && mobileMenu) {
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+    
+    if (window.innerWidth >= 1024 && tabletMenu) {
+      tabletMenu.classList.add('hidden');
+    }
+  });
+  
+  // Handle menu item clicks on mobile
+  const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
+  if (mobileMenuLinks) {
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+  }
+  
+  // Handle menu item clicks on tablet
+  const tabletMenuLinks = tabletMenu?.querySelectorAll('a');
+  if (tabletMenuLinks) {
+    tabletMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        tabletMenu.classList.add('hidden');
+      });
+    });
+  }
 });
 </script>
