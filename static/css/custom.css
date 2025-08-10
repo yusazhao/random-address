@@ -951,6 +951,68 @@ body.menu-open {
   max-width: 64rem; /* 1024px */
 }
 
+/* Border utilities */
+.border-gray-300 {
+  border-color: #d1d5db;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+/* Enhanced data item styling */
+dl > div {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+dl > div:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(147, 197, 253, 0.03) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+dl > div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(59, 130, 246, 0.1) 20%, 
+    rgba(59, 130, 246, 0.3) 50%, 
+    rgba(59, 130, 246, 0.1) 80%, 
+    transparent 100%);
+  opacity: 0.7;
+}
+
+dl > div:last-child::after {
+  display: none;
+}
+
+dl > div:hover::after {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(59, 130, 246, 0.2) 20%, 
+    rgba(59, 130, 246, 0.5) 50%, 
+    rgba(59, 130, 246, 0.2) 80%, 
+    transparent 100%);
+  opacity: 1;
+}
+
+/* Remove old border styling */
+dl > div.border-b {
+  border-bottom: none !important;
+}
+
 /* Padding utilities */
 .pt-12 {
   padding-top: 1.5rem; /* 48px */

@@ -122,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 mb-12">
         <dl class="space-y-6">
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Street</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->street; ?></span>
@@ -134,7 +134,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">City/Town</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->city; ?></span>
@@ -147,7 +147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">State/Province/Region</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->state; ?></span>
@@ -160,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Zip/Postal Code</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->zip_code; ?></span>
@@ -173,7 +173,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Phone Number</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->phone; ?></span>
@@ -186,7 +186,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-                      <div class="flex flex-col sm:flex-row sm:items-center">
+                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Country</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->country; ?></span>
@@ -206,7 +206,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
           <?php if($person): ?>
           <dl class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Full Name</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->full_name; ?></span>
@@ -219,7 +219,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Gender</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->gender; ?></span>
@@ -232,7 +232,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Birthday</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->birthday; ?></span>
@@ -245,7 +245,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Social Security Number</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $person->ssn; ?></span>
@@ -273,7 +273,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h2 class="text-3xl lg:text-4xl font-light text-gray-900 mb-6">Random Credit Card</h2>
         <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
           <dl class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Credit card brand</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_type; ?></span>
@@ -286,7 +286,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Credit card number</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_number; ?></span>
@@ -299,7 +299,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-4">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Expire</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_expire; ?></span>
@@ -312,7 +312,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center">
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
               <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">CVV</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $creditcard->creditcard_cvv; ?></span>
