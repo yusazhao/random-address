@@ -1321,6 +1321,10 @@ dl > div.border-b {
   margin-bottom: 6rem; /* 96px */
 }
 
+.mb-6 {
+  margin-bottom: 3rem; /* 48px */
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }

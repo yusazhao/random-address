@@ -380,7 +380,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
         <!-- Informational Content Section -->
-        <div class="mt-24 mb-24" style="margin-top: 6rem !important; margin-bottom: 6rem !important;">
+        <div class="mt-24 mb-6" style="margin-top: 6rem !important; margin-bottom: 3rem !important;">
           <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
             <div class="prose prose-lg max-w-none">
               <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">What's a Random Address Generator?</h2>
