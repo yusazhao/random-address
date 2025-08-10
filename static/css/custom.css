@@ -1336,6 +1336,17 @@ dl > div.border-b {
   }
 }
 
+.mt-8 {
+  margin-top: 2rem; /* 32px */
+}
+
+/* 响应式 margin */
+@media (min-width: 768px) {
+  .md\:mt-0 {
+    margin-top: 0;
+  }
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }

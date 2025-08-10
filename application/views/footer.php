@@ -1,5 +1,5 @@
 <footer class="bg-gray-50 border-t border-gray-200">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+  <div class="container mx-auto px-8 sm:px-6 lg:px-8 py-12 lg:py-16">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
       
       <!-- About -->
@@ -22,7 +22,7 @@
       </div>
       
       <!-- RandomLocker -->
-      <div class="col-span-2 md:col-span-1">
+      <div class="col-span-2 md:col-span-1 mt-8 md:mt-0">
         <h6 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">RandomLocker</h6>
         <p class="text-gray-600 font-medium leading-relaxed text-sm lg:text-base">
           🚀 Professional random data generation tools for developers and businesses.
