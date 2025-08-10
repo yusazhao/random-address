@@ -42,10 +42,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <h1 class="text-3xl lg:text-4xl font-light text-gray-900 mb-8">Random Address Generator by Countries</h1>
 
       <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 mb-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           <?php foreach($country_list as $row): ?>
-                            <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
-               class="group block p-6 bg-white/50 hover:bg-white/80 rounded-2xl border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg">
+            <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
+               class="country-card group block p-4 bg-white/60 hover:bg-white/90 rounded-2xl border-2 border-gray-300 hover:border-blue-400 transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline" 
+               style="min-height: 45px !important; height: auto !important;">
               <div class="flex items-center space-x-4">
                 <div class="flex-shrink-0">
                   <?php 
@@ -57,14 +58,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   ?>
                   <img src="<?php echo base_url();?>static/img/flags/<?php echo $flag_code; ?>_200_150.svg" 
                        alt="<?php echo $row->country; ?> flag" 
-                       class="w-12 h-9 object-cover rounded shadow-sm"
+                       class="w-14 h-10 object-cover rounded shadow-sm flex-shrink-0"
                        onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
                 </div>
-                <div>
-                  <h3 class="font-semibold transition-colors">
-                    <span class="text-blue-700 group-hover:text-blue-800"><?php echo $row->country; ?></span>
-                    <span class="text-gray-600 group-hover:text-gray-700"> Random Address</span>
-                  </h3>
+                <div class="min-w-0 flex-1">
+                  <div class="transition-colors">
+                    <span class="country-name"><?php echo $row->country; ?></span>
+                    <span class="random-address-text">Random Address</span>
+                  </div>
                 </div>
               </div>
             </a>
