@@ -1325,6 +1325,17 @@ dl > div.border-b {
   margin-bottom: 3rem; /* 48px */
 }
 
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+/* 响应式 col-span */
+@media (min-width: 768px) {
+  .md\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
