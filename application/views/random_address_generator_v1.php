@@ -427,7 +427,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <?php echo $footer; ?>
 
-  <script src="<?php echo base_url();?>static/js/custom.js"></script>
+  <script src="<?php echo base_url();?>static/js/custom_simple.js"></script>
 
   
 

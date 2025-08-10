@@ -787,7 +787,12 @@ body {
 }
 
 .copy-btn.copied {
-  background-color: #059669;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+}
+
+.copy-btn.copied:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  transform: none !important;
 }
 
 .copy-icon {
@@ -795,27 +800,7 @@ body {
   height: 1rem;
 }
 
-/* Copy Button Small */
-.copy-btn-small {
-  background-color: #2563eb;
-  color: white;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  margin-left: 1rem;
-}
-
-.copy-btn-small:hover {
-  background-color: #1d4ed8;
-}
-
-.copy-btn-small.copied {
-  background-color: #059669;
-}
+/* Copy Button Small styles removed - using unified copy-btn class */
 
 /* Responsive Text */
 @media (max-width: 640px) {
