@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <?php echo $header; ?>
 
   <main class="flex-1">
-    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-4">
+    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-12 pb-4">
       <!-- Breadcrumb Navigation -->
       <nav class="mb-6" aria-label="Breadcrumb">
         <div class="text-base sm:text-xl lg:text-2xl font-bold text-gray-700" style="display: flex; align-items: center; flex-wrap: wrap; gap: 2px;">

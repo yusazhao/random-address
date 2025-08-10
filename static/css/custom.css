@@ -946,6 +946,11 @@ body.menu-open {
   }
 }
 
+/* Width utilities */
+.max-w-5xl {
+  max-width: 64rem; /* 1024px */
+}
+
 /* Padding utilities */
 .pt-12 {
   padding-top: 1.5rem; /* 48px */
