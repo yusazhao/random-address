@@ -1046,6 +1046,33 @@ dl > div.border-b {
   line-height: 1.2;
 }
 
+/* Country card text styling - 使用更高优先级 */
+.country-card .country-name {
+  display: block !important;
+  line-height: 1.2 !important;
+  font-size: 1.25rem !important; /* 20px - 更大更明显 */
+  font-weight: 700 !important; /* 更粗 */
+  color: #1d4ed8 !important; /* 蓝色 */
+  margin-bottom: 2px !important;
+}
+
+.country-card:hover .country-name {
+  color: #1e40af !important; /* hover时更深的蓝色 */
+}
+
+.country-card .random-address-text {
+  display: block !important;
+  font-size: 0.875rem !important; /* 14px - 保持较小 */
+  margin-top: 2px !important;
+  line-height: 1.2 !important;
+  color: #000000 !important; /* 黑色 */
+  opacity: 1 !important;
+}
+
+.country-card:hover .random-address-text {
+  color: #000000 !important; /* hover时保持黑色 */
+}
+
 .state-card::before {
   content: '';
   position: absolute;
@@ -1105,6 +1132,34 @@ dl > div.border-b {
 
 .hover\:shadow-xl:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.w-14 {
+  width: 3.5rem; /* 56px */
+}
+
+.h-10 {
+  height: 2.5rem; /* 40px */
+}
+
+.min-h-\[80px\] {
+  min-height: 45px;
+}
+
+.min-h-45 {
+  min-height: 45px !important;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
 }
 
 .hover\:scale-105:hover {
