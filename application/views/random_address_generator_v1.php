@@ -367,11 +367,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          class="w-14 h-10 object-cover rounded shadow-sm flex-shrink-0"
                          onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
                   </div>
-                  <div class="min-w-0 flex-1">
-                    <div class="transition-colors">
-                      <span class="country-name"><?php echo $row->country; ?></span>
-                      <span class="random-address-text">Random Address</span>
-                    </div>
+                  <div class="text-content">
+                    <span class="country-name"><?php echo $row->country; ?></span>
+                    <span class="random-address-text">Random Address</span>
                   </div>
                 </div>
               </a>

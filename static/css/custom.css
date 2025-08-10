@@ -1079,6 +1079,23 @@ dl > div.border-b {
   color: #000000 !important; /* hover时保持黑色 */
 }
 
+/* Country card layout styling */
+.country-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 1rem !important;
+  padding: 1rem !important;
+}
+
+.country-card .text-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  flex: 1 !important;
+}
+
 /* Country card text styling - 使用更高优先级 */
 .country-card .country-name {
   display: block !important;
