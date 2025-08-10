@@ -1313,6 +1313,14 @@ dl > div.border-b {
   transform: scale(1.05);
 }
 
+.mt-24 {
+  margin-top: 6rem; /* 96px */
+}
+
+.mb-24 {
+  margin-bottom: 6rem; /* 96px */
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
