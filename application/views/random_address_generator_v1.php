@@ -385,7 +385,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="prose prose-lg max-w-none">
               <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">What's a Random Address Generator?</h2>
               <p class="text-gray-700 leading-relaxed mb-6">
-                A Random Address Generator is a web-based tool that creates simulated addresses for a chosen country or region. It randomly picks street, city, and state names, and provides a zip code that matches the selected location.
+                A random address generator is a tool that displays a random local address in a chosen country, including the street number, street name, city, and state. It also provides personal information and a zip code that matches the selected location.
               </p>
 
               <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 mt-12">Why Do You Need a Random Address Generator?</h2>
@@ -395,20 +395,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <ul class="list-disc pl-6 text-gray-700 leading-relaxed space-y-3 mb-6">
                 <li><strong>Privacy Protection:</strong> When you're signing up for something online and worry about sharing your real address, a random address can be a safe alternative, helping to protect your personal details.</li>
                 <li><strong>Software Testing:</strong> Developers use these tools to test new applications or websites, ensuring location-based features work correctly without needing real addresses.</li>
-                <li><strong>Data Collection:</strong> For researchers and analysts, these generators can create large amounts of address data, which helps with comprehensive studies and deep dives.</li>
-                <li><strong>Data Validation:</strong> They assist in cross-checking and confirming the accuracy of address information stored in databases.</li>
               </ul>
 
               <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 mt-12">How to Use a Random Address Generator</h2>
               <p class="text-gray-700 leading-relaxed mb-6">
-                Our Random Address Generator is a user-friendly tool. Just follow these simple steps to generate an address:
+                Our Random Address Generator is designed for simplicity and efficiency. Follow these easy steps to get started:
               </p>
               <ul class="list-disc pl-6 text-gray-700 leading-relaxed space-y-3 mb-6">
-                <li><strong>Select a Country/Region:</strong> Once you're on the tool, you'll see a dropdown menu with various countries. Pick the country you need a random address for. The list includes many options like the U.S., Canada, Australia, Germany, and more, to serve users worldwide.</li>
-                <li><strong>Generate the Address:</strong> After choosing your desired country, the random address generator will process your request and instantly provide a random address for that location.</li>
-                <li><strong>View Details:</strong> The generated address will include details like the house number, street name, city, state/province, and zip code. Besides the address, personal information is also randomly generated.</li>
-                <li><strong>Use the Address:</strong> You can now use this address for your specific needs, whether it's for signing up, testing, or as a placeholder in presentations or documents.</li>
-                <li><strong>Generate More Addresses:</strong> If you need another address, simply repeat the process. There's no limit to how many addresses you can generate, but you can only create one at a time.</li>
+                <li><strong>Choose Your Country:</strong> Browse through our "All Countries" section or select from the "Random address by US states" if you need a US-specific address. We support over 50 countries worldwide including popular regions like the United States, Canada, United Kingdom, Australia, Germany, France, and many more.</li>
+                <li><strong>Instant Generation:</strong> Simply click on any country or state link - no forms to fill out, no dropdowns to navigate. Your random address generates automatically upon page load, saving you time and clicks.</li>
+                <li><strong>Complete Data Package:</strong> Each generation provides a comprehensive dataset including full address details (street, city, state/province, zip/postal code), random personal information (name, gender, birthday, SSN), and even random credit card information for testing purposes.</li>
+                <li><strong>Easy Copy & Use:</strong> Click the copy button next to any data field to instantly copy it to your clipboard. Each piece of information can be copied individually for maximum flexibility.</li>
+                <li><strong>Refresh for More:</strong> Need another address from the same location? Simply click the refresh button to generate a new random address while staying on the same page.</li>
+                <li><strong>Mobile Optimized:</strong> Our tool works seamlessly across all devices - desktop, tablet, and mobile - with responsive design ensuring perfect usability everywhere.</li>
               </ul>
 
               <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 mt-12">How Our Random Address Generator Stands Out</h2>
