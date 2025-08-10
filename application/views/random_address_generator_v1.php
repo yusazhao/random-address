@@ -334,19 +334,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <h2 class="text-2xl font-light text-gray-900 mb-6">Random address by <?php if(array_key_exists($address->country_code,$tier1_array)){
             echo $tier1_array[$address->country_code];
           }else{echo $address->country; } ?> states</h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4">
             <?php foreach($state_list as $row): ?>
-              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" class="text-blue-600 hover:text-blue-800 px-4 py-3 rounded-xl hover:bg-blue-50 transition-all duration-200 text-center font-medium border border-gray-200 hover:border-blue-300 hover:shadow-sm"><?php echo $row->state; ?> Random Address</a>
+              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" class="state-card text-blue-700 hover:text-blue-900 px-4 py-3 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 transition-all duration-300 text-center font-medium border-2 border-gray-300 hover:border-blue-400 hover:shadow-lg transform hover:scale-105 no-underline">
+                <span class="state-name"><?php echo $row->state; ?></span>
+                <span class="random-address-text">Random Address</span>
+              </a>
             <?php endforeach; ?>
           </div>
         </div>
 
         <div class="mt-16">
           <h2 class="text-2xl font-light text-gray-900 mb-6">All Countries</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             <?php foreach($country_list as $row): ?>
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
-                 class="group block p-4 bg-white/50 hover:bg-white/80 rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-md">
+                 class="country-card group block p-5 bg-white/60 hover:bg-white/90 rounded-2xl border-2 border-gray-300 hover:border-blue-400 transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline">
                 <div class="flex items-center space-x-3">
                   <div class="flex-shrink-0">
                     <?php 
