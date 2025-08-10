@@ -1025,25 +1025,58 @@ dl > div.border-b {
   text-decoration: none !important;
   position: relative;
   overflow: hidden;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 1rem;
 }
 
 .text-center {
   text-align: center;
 }
 
+.state-card .text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .state-card .state-name {
   display: block;
   line-height: 1.2;
+  font-size: 1rem !important; /* 16px - 手机端较小 */
+  font-weight: 700 !important; /* 更粗 */
+  color: #1d4ed8 !important; /* 蓝色 */
+  margin-bottom: 2px !important;
+  text-align: center !important;
+}
+
+/* 桌面端恢复大字号 */
+@media (min-width: 768px) {
+  .state-card .state-name {
+    font-size: 1.25rem !important; /* 20px - 桌面端与国家名称一致 */
+  }
+}
+
+.state-card:hover .state-name {
+  color: #1e40af !important; /* hover时更深的蓝色 */
 }
 
 .state-card .random-address-text {
   display: block;
-  font-size: 0.875rem;
-  opacity: 0.8;
-  margin-top: 2px;
-  line-height: 1.2;
+  font-size: 0.875rem !important;
+  margin-top: 2px !important;
+  line-height: 1.2 !important;
+  color: #000000 !important; /* 黑色 */
+  opacity: 1 !important;
+  text-align: center !important;
+}
+
+.state-card:hover .random-address-text {
+  color: #000000 !important; /* hover时保持黑色 */
 }
 
 /* Country card text styling - 使用更高优先级 */
@@ -1067,6 +1100,14 @@ dl > div.border-b {
   line-height: 1.2 !important;
   color: #000000 !important; /* 黑色 */
   opacity: 1 !important;
+  font-weight: 700 !important; /* PC端加粗 */
+}
+
+/* 手机端保持正常粗细 */
+@media (max-width: 767px) {
+  .country-card .random-address-text {
+    font-weight: 400 !important; /* 手机端正常粗细 */
+  }
 }
 
 .country-card:hover .random-address-text {
