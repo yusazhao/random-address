@@ -5,10 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List of Random Address Generators by Country</title>
+  <title>Random Address Generators by Country</title>
 
   
-<meta name="description" content="Explore a comprehensive list of random address generators by country, providing users with reliable, country-specific address data for various uses such as testing, form-filling, and more." />
+<meta name="description" content="Select a Country for a Random Address." />
 
   <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
 

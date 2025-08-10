@@ -9,9 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php if($is_state_page): ?>
-    <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Random address generator in <?php echo $address->state;?>
+    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | <?php echo $address->state;?> | Random Address
   <?php else: ?>
-    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | Random Address | Random Address Generator
+    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | Random Address
   <?php endif; ?></title>
 
   <meta name="description" content="<?php if($is_state_page): ?>
