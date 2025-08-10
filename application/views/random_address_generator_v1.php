@@ -403,12 +403,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="mb-6" style="margin-bottom: 3rem !important;">
           <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
             <div class="prose prose-lg max-w-none">
-              <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">What's a Random Address Generator?</h3>
+              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">What's a Random Address Generator?</h3>
               <p class="text-gray-700 leading-relaxed mb-6">
                 A random address generator is a tool that displays a random local address in a chosen country, including the street number, street name, city, and state. It also provides personal information and a zip code that matches the selected location.
               </p>
 
-              <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 mt-12">Why Do You Need a Random Address Generator?</h3>
+              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 mt-12">Why Do You Need a Random Address Generator?</h3>
               <p class="text-gray-700 leading-relaxed mb-6">
                 Random address generators have several key uses. Let's explore some common scenarios:
               </p>
@@ -417,7 +417,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li><strong>Software Testing:</strong> Developers use these tools to test new applications or websites, ensuring location-based features work correctly without needing real addresses.</li>
               </ul>
 
-              <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 mt-12">How to Use a Random Address Generator</h3>
+              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 mt-12">How to Use a Random Address Generator</h3>
               <p class="text-gray-700 leading-relaxed mb-6">
                 Our Random Address Generator is designed for simplicity and efficiency. Follow these easy steps to get started:
               </p>
@@ -430,7 +430,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li><strong>Mobile Optimized:</strong> Our tool works seamlessly across all devices - desktop, tablet, and mobile - with responsive design ensuring perfect usability everywhere.</li>
               </ul>
 
-              <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 mt-12">How Our Random Address Generator Stands Out</h3>
+              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 mt-12">How Our Random Address Generator Stands Out</h3>
               <p class="text-gray-700 leading-relaxed mb-6">
                 What makes our Random Address Generator different is that our data is reliable, and the addresses provided are for real, publicly accessible locations.
               </p>
