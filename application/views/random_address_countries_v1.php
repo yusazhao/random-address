@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ol>
       </nav>
       
-      <h1 class="text-3xl lg:text-4xl font-light text-gray-900 mb-8">Random Address Generator by Countries</h1>
+      <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Random Address Generator by Countries</h1>
 
       <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 mb-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">

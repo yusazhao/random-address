@@ -120,7 +120,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="hidden sm:block sm:flex-1"></div>
           
           <!-- Centered title -->
-          <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-center sm:flex-1">Random Address</h2>
+          <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-left sm:text-center sm:flex-1">Random Address</h2>
           
           <!-- Right-aligned button -->
           <div class="flex justify-center sm:justify-end sm:flex-1 mt-4 sm:mt-0">
