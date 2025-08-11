@@ -345,6 +345,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php endif; ?>
 
       <div class="space-y-12">
+        <?php if(!empty($state_list)): ?>
         <div>
           <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Random address by <?php if(array_key_exists($address->country_code,$tier1_array)){
             echo $tier1_array[$address->country_code];
@@ -360,8 +361,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php endforeach; ?>
           </div>
         </div>
+        <?php endif; ?>
 
-        <div class="mt-16">
+        <div class="<?php echo !empty($state_list) ? 'mt-16' : ''; ?>">
           <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">All Countries</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             <?php foreach($country_list as $row): ?>
@@ -395,7 +397,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
         <!-- FAQ Section Title -->
-        <div class="mt-24 mb-6" style="margin-top: 6rem !important;">
+        <div class="<?php echo !empty($state_list) ? 'mt-24' : 'mt-16'; ?> mb-6" style="margin-top: <?php echo !empty($state_list) ? '6rem' : '4rem'; ?> !important;">
           <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Frequently Asked Questions</h2>
         </div>
 

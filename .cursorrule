@@ -12,6 +12,54 @@
 
 #要求
 把代码抽象做好，提升代码复用度，提升代码可维护性
-用户界面要美观，要符合现代审美，要符合用户操作习惯（我觉得苹果的页面设计风格不错，可以按苹果的风格设计我们自己的页面）
+用户界面要美观，要符合现代审美（有着苹果和谷歌产品的那种精致感），要符合用户操作习惯
 页面所有代码，js和css都我们自己写，不要依赖第三方工具（提升页面加载速度，确保用户体验）
 界面同时支持PC端、手机端 和 平板端
+
+#表结构
+CREATE TABLE `address` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `street` varchar(255) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `city_slug` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `state_slug` varchar(100) DEFAULT NULL,
+  `state_code` varchar(100) DEFAULT NULL,
+  `zip_code` varchar(20) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `country_slug` varchar(255) DEFAULT NULL,
+  `country_code` varchar(10) DEFAULT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  `longitude` varchar(255) DEFAULT NULL,
+  `gmt_created` timestamp NULL DEFAULT NULL,
+  `gmt_modified` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `idx_ccode_id` (`country_code`,`Id`),
+  KEY `idx_ccode_scode_id` (`country_code`,`state_code`,`Id`),
+  KEY `idx_city` (`country_code`,`state_code`,`city_slug`,`Id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4780860 DEFAULT CHARSET=utf8mb3;
+
+CREATE TABLE `country` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `country` varchar(255) DEFAULT NULL,
+  `country_slug` varchar(255) DEFAULT NULL,
+  `country_code` varchar(255) DEFAULT NULL,
+  `gmt_created` timestamp NULL DEFAULT NULL,
+  `gmt_modified` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8mb3;
+
+CREATE TABLE `country_state` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `country` varchar(255) DEFAULT NULL,
+  `country_slug` varchar(255) DEFAULT NULL,
+  `country_code` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `state_slug` varchar(255) DEFAULT NULL,
+  `state_code` varchar(255) DEFAULT NULL,
+  `gmt_created` timestamp NULL DEFAULT NULL,
+  `gmt_modified` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `inx_country` (`country_code`)
+) ENGINE=MyISAM AUTO_INCREMENT=1349 DEFAULT CHARSET=utf8mb3;
