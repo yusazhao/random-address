@@ -120,7 +120,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="hidden sm:block sm:flex-1"></div>
           
           <!-- Centered title -->
-          <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 text-left sm:text-center sm:flex-1">Random Address</h2>
+          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 text-left sm:text-center sm:flex-1">Random Address</h2>
           
           <!-- Right-aligned button -->
           <div class="flex justify-center sm:justify-end sm:flex-1 mt-4 sm:mt-0">
@@ -217,7 +217,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
       <div class="mb-12">
-        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Random Person Information</h2>
+        <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Random Person Information</h2>
         <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
           <?php if($person): ?>
           <dl class="space-y-6">
@@ -285,7 +285,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <?php if($creditcard): ?>
       <div class="mb-12">
-        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Random Credit Card</h2>
+        <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Random Credit Card</h2>
         <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
           <dl class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
@@ -346,7 +346,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <div class="space-y-12">
         <div>
-          <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Random address by <?php if(array_key_exists($address->country_code,$tier1_array)){
+          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Random address by <?php if(array_key_exists($address->country_code,$tier1_array)){
             echo $tier1_array[$address->country_code];
           }else{echo $address->country; } ?> states</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4">
@@ -362,7 +362,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <div class="mt-16">
-          <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">All Countries</h2>
+          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">All Countries</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             <?php foreach($country_list as $row): ?>
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
@@ -396,7 +396,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <!-- FAQ Section Title -->
         <div class="mt-24 mb-6" style="margin-top: 6rem !important;">
-          <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Frequently Asked Questions</h2>
         </div>
 
         <!-- Informational Content Section -->
