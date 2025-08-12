@@ -74,14 +74,20 @@ class Random_Address extends CI_Controller {
 			$creditcard = $this->Random_Address_model->get_creditcard('',$credit_random_id);
 		}
 
-		// 加载州列表
-		$state_list = $this->Random_Address_model->get_state_list($country_code);
+		// 加载州列表（仅限美国）
+		$state_list = array();
+		if(strtolower($country_code) == 'us') {
+			$state_list = $this->Random_Address_model->get_state_list($country_code);
+		}
 		
 		// 加载国家列表
 		$country_list = $this->Random_Address_model->get_country_list();
 		
-		// 加载主要城市列表
-		$major_cities = $this->Random_Address_model->get_major_cities($country_code);
+		// 加载主要城市列表（仅限美国）
+		$major_cities = array();
+		if(strtolower($country_code) == 'us') {
+			$major_cities = $this->Random_Address_model->get_major_cities($country_code);
+		}
 		
 		$data['creditcard'] = $creditcard;
 		$data['person'] = $person;
@@ -124,7 +130,13 @@ class Random_Address extends CI_Controller {
 		$randomID = $this->Random_Address_model->get_address_minmax_id($country_code,$state_code);
 		$random_id = mt_rand($randomID->min_id, $randomID->max_id);
 		$address = $this->Random_Address_model->get_random_address($country_code,$state_code,$random_id);
-		$state_list = $this->Random_Address_model->get_state_list($country_code);
+		
+		// 加载州列表（仅限美国）
+		$state_list = array();
+		if(strtolower($country_code) == 'us') {
+			$state_list = $this->Random_Address_model->get_state_list($country_code);
+		}
+		
 		if($address == null){
 			redirect(base_url(), 'location', 301);
 		}
@@ -148,8 +160,11 @@ class Random_Address extends CI_Controller {
 		// 加载国家列表
 		$country_list = $this->Random_Address_model->get_country_list();
 		
-		// 加载主要城市列表
-		$major_cities = $this->Random_Address_model->get_major_cities($country_code);
+		// 加载主要城市列表（仅限美国）
+		$major_cities = array();
+		if(strtolower($country_code) == 'us') {
+			$major_cities = $this->Random_Address_model->get_major_cities($country_code);
+		}
 		
 		$data['creditcard'] = $creditcard;
 		$data['person'] = $person;
@@ -226,14 +241,20 @@ class Random_Address extends CI_Controller {
 			$creditcard = $this->Random_Address_model->get_creditcard('',$credit_random_id);
 		}
 		
-		// 加载州列表
-		$state_list = $this->Random_Address_model->get_state_list($country_code);
+		// 加载州列表（仅限美国）
+		$state_list = array();
+		if(strtolower($country_code) == 'us') {
+			$state_list = $this->Random_Address_model->get_state_list($country_code);
+		}
 		
 		// 加载国家列表
 		$country_list = $this->Random_Address_model->get_country_list();
 		
-		// 加载主要城市列表
-		$major_cities = $this->Random_Address_model->get_major_cities($country_code);
+		// 加载主要城市列表（仅限美国）
+		$major_cities = array();
+		if(strtolower($country_code) == 'us') {
+			$major_cities = $this->Random_Address_model->get_major_cities($country_code);
+		}
 		
 		$data['creditcard'] = $creditcard;
 		$data['person'] = $person;
