@@ -53,7 +53,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="text-base sm:text-xl lg:text-2xl font-bold text-gray-700" style="display: flex; align-items: center; flex-wrap: wrap; gap: 2px;">
           <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 0;">Home</a>
           <span class="text-gray-400" style="flex-shrink: 0;">/</span>
-          <?php if($is_state_page): ?>
+          <?php if(isset($is_city_page) && $is_city_page): ?>
+            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 1; min-width: 0;">
+              <?php echo $address->country; ?>
+            </a>
+            <span class="text-gray-400" style="flex-shrink: 0;">/</span>
+            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>-<?php echo strtolower($address->state_code); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 1; min-width: 0;">
+              <?php echo $address->state; ?>
+            </a>
+            <span class="text-gray-400" style="flex-shrink: 0;">/</span>
+            <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;"><?php echo $address->city; ?> Random Address</span>
+          <?php elseif($is_state_page): ?>
             <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 1; min-width: 0;">
               <?php echo $address->country; ?>
             </a>
@@ -69,7 +79,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="<?php echo base_url(); ?>" itemprop="item"><span itemprop="name">Home</span></a>
             <meta itemprop="position" content="1" />
           </li>
-          <?php if($is_state_page): ?>
+          <?php if(isset($is_city_page) && $is_city_page): ?>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" itemprop="item">
+                <span itemprop="name"><?php echo $address->country; ?></span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>-<?php echo strtolower($address->state_code); ?>" itemprop="item">
+                <span itemprop="name"><?php echo $address->state; ?></span>
+              </a>
+              <meta itemprop="position" content="3" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <span itemprop="name"><?php echo $address->city; ?> Random Address</span>
+              <meta itemprop="position" content="4" />
+            </li>
+          <?php elseif($is_state_page): ?>
             <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
               <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" itemprop="item">
                 <span itemprop="name"><?php echo $address->country; ?></span>
