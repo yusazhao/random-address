@@ -363,7 +363,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <?php endif; ?>
 
-        <div class="<?php echo !empty($state_list) ? 'mt-16' : ''; ?>">
+        <?php if(!empty($major_cities)): ?>
+        <div class="<?php echo !empty($state_list) ? 'mt-16' : 'mt-16'; ?>">
+          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Major cities in <?php if(array_key_exists($address->country_code,$tier1_array)){
+            echo $tier1_array[$address->country_code];
+          }else{echo $address->country; } ?></h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4">
+            <?php foreach($major_cities as $city): ?>
+              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($city->country_code);?>-<?php echo strtolower($city->state_code);?>/<?php echo $city->city_slug;?>" class="state-card rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 transition-all duration-300 font-medium border-2 border-gray-300 hover:border-blue-400 hover:shadow-lg transform hover:scale-105 no-underline">
+                <div class="text-content">
+                  <span class="state-name"><?php echo htmlspecialchars($city->city); ?></span>
+                  <span class="random-address-text">Random Address</span>
+                </div>
+              </a>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <?php endif; ?>
+
+        <div class="<?php echo (!empty($state_list) || !empty($major_cities)) ? 'mt-16' : ''; ?>">
           <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">All Countries</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             <?php foreach($country_list as $row): ?>
@@ -397,7 +415,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
         <!-- FAQ Section Title -->
-        <div class="<?php echo !empty($state_list) ? 'mt-24' : 'mt-16'; ?> mb-6" style="margin-top: <?php echo !empty($state_list) ? '6rem' : '4rem'; ?> !important;">
+        <div class="<?php echo !empty($state_list) ? 'mt-24' : 'mt-16'; ?> mb-6" style="margin-top: <?php echo !empty($state_list) ? '4rem' : '4rem'; ?> !important;">
           <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Frequently Asked Questions</h2>
         </div>
 

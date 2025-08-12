@@ -168,4 +168,27 @@ class Random_Address_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_major_cities($country_code){
+        $query_sql = "select country,country_slug,country_code,state,state_slug,state_code,city,city_slug,pop from country_city where country_code = ? order by pop desc limit 23";
+        $query = $this->db->query($query_sql, array($country_code));
+        return $query->result();
+    }
+
+    public function get_address_minmax_id_by_city($country_code, $state_code, $city_slug){
+        $query_sql = "SELECT MIN(id) AS min_id, MAX(id) AS max_id FROM address WHERE country_code = ? AND state_code = ? AND city_slug = ?";
+        $query = $this->db->query($query_sql, array($country_code, $state_code, $city_slug));
+        return $query->row();
+    }
+
+    public function get_random_address_by_city($country_code, $state_code, $city_slug, $random_id){
+        $query_sql = "SELECT id, street, city, city_slug, state, state_slug, 
+                      state_code, zip_code, phone, country, country_slug, 
+                      country_code, latitude, longitude, gmt_created, gmt_modified
+                      FROM address
+                      WHERE country_code = ? AND state_code = ? AND city_slug = ? AND id >= ?
+                      LIMIT 1";
+        $query = $this->db->query($query_sql, array($country_code, $state_code, $city_slug, $random_id));
+        return $query->row();
+    }
+
 } 

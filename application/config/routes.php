@@ -58,6 +58,7 @@ $route['default_controller'] = 'Random_Address/index';
 // Address routes (keep specific routes before general ones)
 $route['random-address-generator-countries'] = 'Random_Address/random_address_countries';
 
+$route['random-address-generator/(:any)-(:any)/(:any)'] = 'Random_Address/random_address_city';
 $route['random-address-generator/(:any)-(:any)'] = 'Random_Address/random_address_state';
 $route['random-address-generator/(:any)'] = 'Random_Address/index';
 

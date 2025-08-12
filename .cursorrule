@@ -63,3 +63,21 @@ CREATE TABLE `country_state` (
   PRIMARY KEY (`Id`),
   KEY `inx_country` (`country_code`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1349 DEFAULT CHARSET=utf8mb3;
+
+CREATE TABLE `country_city` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `country` varchar(50) DEFAULT NULL,
+  `country_slug` varchar(50) DEFAULT NULL,
+  `country_code` varchar(50) DEFAULT NULL,
+  `state` varchar(50) DEFAULT NULL,
+  `state_slug` varchar(50) DEFAULT NULL,
+  `state_code` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `city_slug` varchar(50) DEFAULT NULL,
+  `pop` int DEFAULT NULL,
+  `gmt_created` timestamp NULL DEFAULT NULL,
+  `gmt_modified` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `inx_country_pop` (`country_code`,`pop`),
+  KEY `inx_country_state` (`country_code`,`state_code`)
+) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb3;
