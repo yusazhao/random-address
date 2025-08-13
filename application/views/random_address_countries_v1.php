@@ -10,6 +10,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
 <meta name="description" content="Select a Country for a Random Address." />
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="<?php echo current_url(); ?>" />
+
   <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
 
 </head>

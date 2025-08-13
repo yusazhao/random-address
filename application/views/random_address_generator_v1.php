@@ -23,6 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta name="robots" content="index, follow" />
   <meta name="author" content="RandomAddress" />
   
+  <!-- Canonical URL -->
+  <link rel="canonical" href="<?php echo current_url(); ?>" />
+  
   <!-- Open Graph Tags -->
   <meta property="og:title" content="Random <?php if(array_key_exists($address->country_code,$tier1_array)){echo $tier1_array[$address->country_code];}else{echo $address->country;} ?> Address Generator" />
   <meta property="og:description" content="Generate random <?php echo $address->country; ?> addresses with street, city, state, ZIP code for testing and development purposes." />
