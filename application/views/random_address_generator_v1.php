@@ -8,17 +8,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php if($is_state_page): ?>
-    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | <?php echo $address->state;?> | Random Address
+  <title><?php if(isset($is_city_page) && $is_city_page): ?>
+    Free Random <?php echo $address->city; ?>, <?php echo strtoupper($address->state_code); ?> address generator | Real & Valid
+  <?php elseif($is_state_page): ?>
+    Free Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | For Any State
   <?php else: ?>
-    Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | Random Address
+    Free Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator
   <?php endif; ?></title>
 
-  <meta name="description" content="<?php if($is_state_page): ?>
-    Ensure 100% success for account registration with our high-quality, real <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses in <?php echo $address->state;?>. Simply click to copy and paste.
-  <?php else: ?>
-    Ensure 100% success for account registration with our high-quality, real <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses. Simply click to copy and paste.
-  <?php endif; ?>" />
+  <meta name="description" content="High-quality random address generator provides real <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses that ensure 100% success for your account registrations. Simply click to copy and paste." />
   
   <!-- SEO Meta Tags -->
   <meta name="keywords" content="random address, random address generator, random <?php echo strtolower($address->country); ?> addresses generator, fake address, fake address generator" />
