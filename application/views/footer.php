@@ -4,7 +4,7 @@
       
       <!-- About -->
       <div>
-        <h6 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">About</h6>
+        <div class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">About</div>
         <ul class="space-y-3">
           <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>about-us">📋 About us</a></li>
           <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="mailto:support@randomaddress.com">📧 Contact</a></li>
@@ -13,7 +13,7 @@
       
       <!-- Legal -->
       <div>
-        <h6 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">Legal</h6>
+        <div class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">Legal</div>
         <ul class="space-y-3">
           <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>terms">📄 Terms of use</a></li>
           <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>privacy-policy">🔒 Privacy policy</a></li>
@@ -23,7 +23,7 @@
       
       <!-- RandomLocker -->
       <div class="col-span-2 md:col-span-1 mt-8 md:mt-0">
-        <h6 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">RandomLocker</h6>
+        <div class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">Random Address</div>
         <p class="text-gray-600 font-medium leading-relaxed text-sm lg:text-base">
           🚀 Professional random data generation tools for developers and businesses.
         </p>
