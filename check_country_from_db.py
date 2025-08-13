@@ -18,15 +18,8 @@ import pymysql
 在 address 表中存在，但在 country 表中不存在的国家:
 --------------------------------------------------------------------------------
   1. Armenia
-  2. Austria
-  3. Bulgaria
-  4. Cyprus
-  5. Denmark
-  6. Ireland
-  7. Montenegro
-  8. New Zealand
-  9. Norway
- 10. Switzerland
+--------------------------------------------------------------------------------
+总计: 1 个国家
 ================================================================================
 在 country 表中存在，但在 address 表中不存在的国家:
 --------------------------------------------------------------------------------
@@ -79,7 +72,7 @@ def get_country_table_countries():
             host='localhost',
             user='root',
             password='hello1234',
-            database='real',
+            database='randomlocker',
             charset='utf8mb4',
             cursorclass=pymysql.cursors.DictCursor
         )
