@@ -1,48 +1,15 @@
 <footer class="bg-gray-50 border-t border-gray-200">
-  <div class="container mx-auto px-8 sm:px-6 lg:px-8 py-12 lg:py-16">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
-      
-      <!-- About -->
-      <div>
-        <div class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">About</div>
-        <ul class="space-y-3">
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>about-us">📋 About us</a></li>
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="mailto:support@randomaddress.com">📧 Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Legal -->
-      <div>
-        <div class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">Legal</div>
-        <ul class="space-y-3">
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>terms">📄 Terms of use</a></li>
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>privacy-policy">🔒 Privacy policy</a></li>
-          <li><a class="text-gray-600 hover:text-blue-600 hover:underline transition-all duration-200 font-medium text-sm lg:text-base" href="<?php echo base_url();?>cookie-policy">🍪 Cookie policy</a></li>
-        </ul>
-      </div>
-      
-      <!-- RandomLocker -->
-      <div class="col-span-2 md:col-span-1 mt-8 md:mt-0">
-        <div class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 lg:mb-6">Random Address</div>
-        <p class="text-gray-600 font-medium leading-relaxed text-sm lg:text-base">
-          🚀 Professional random data generation tools for developers and businesses.
-        </p>
-      </div>
-      
-    </div>
-  </div>
-  
-  <!-- Copyright -->
-  <div class="border-t border-gray-200 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
-      <div class="text-center space-y-2">
-        <p class="text-gray-500 text-sm font-medium">
-                      RandomAddress &copy;<?php echo date('Y'); ?>, all rights reserved
-        </p>
-        <p class="text-gray-400 text-xs">
-          Providing reliable tech since 2025
-        </p>
-      </div>
+  <div class="container mx-auto px-8 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <div class="text-center space-y-4">
+      <p class="text-gray-600 text-sm font-medium">
+        RandomAddress ©2025, all rights reserved
+      </p>
+      <p class="text-gray-600 text-sm font-medium">
+        Contact us: support@randomaddress.com
+      </p>
+      <p class="text-gray-600 text-sm font-medium">
+        <a href="<?php echo base_url();?>privacy-policy" class="text-blue-600 hover:text-blue-800 transition-colors duration-200 no-underline">🔒 Privacy policy</a>
+      </p>
     </div>
   </div>
 </footer>

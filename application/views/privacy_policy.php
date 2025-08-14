@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <?php echo $header; ?>
 
   <main class="flex-1">
-    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
       <h1 class="text-3xl lg:text-4xl font-light text-gray-900 mb-8">Privacy Policy</h1>
 
       <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
