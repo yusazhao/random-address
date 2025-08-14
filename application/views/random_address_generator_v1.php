@@ -191,7 +191,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
 
                       <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">State/Province/Region</dt>
+              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">State/Province/Rrea</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->state; ?></span>
                 <button onclick="copyToClipboard('<?php echo addslashes($address->state); ?>')" class="copy-btn ml-4 flex items-center">
@@ -204,7 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
 
                       <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Zip/Postal Code</dt>
+              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Zip Code</dt>
               <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
                 <span><?php echo $address->zip_code; ?></span>
                 <button onclick="copyToClipboard('<?php echo addslashes($address->zip_code); ?>')" class="copy-btn ml-4 flex items-center">
@@ -225,18 +225,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                   </svg>
 
-                </button>
-              </dd>
-            </div>
-
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Country</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $address->country; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->country); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
                 </button>
               </dd>
             </div>
@@ -288,18 +276,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </dd>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Social Security Number</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $person->ssn; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->ssn); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
           </dl>
           <?php endif; ?>
         </div>
@@ -308,69 +284,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-
-
-
-      <?php if($creditcard): ?>
-      <div class="mb-12">
-        <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Random Credit Card</h2>
-        <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
-          <dl class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Credit card brand</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $creditcard->creditcard_type; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_type); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Credit card number</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $creditcard->creditcard_number; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_number); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Expire</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $creditcard->creditcard_expire; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_expire); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">CVV</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $creditcard->creditcard_cvv; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($creditcard->creditcard_cvv); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-      <?php endif; ?>
 
       <div class="space-y-12">
         <?php if(!empty($state_list)): ?>
