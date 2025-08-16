@@ -273,19 +273,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
                   </div>
-                  <h3 class="person-name"><?php echo $person->full_name; ?></h3>
+                  <div class="flex items-center justify-center gap-3 mb-2">
+                    <h3 class="person-name"><?php echo $person->full_name; ?></h3>
+                    <button onclick="copyToClipboard('<?php echo addslashes($person->full_name); ?>')" 
+                            class="copy-btn bg-success-100 hover:bg-success-200 p-2 rounded-lg">
+                      <svg class="w-4 h-4 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                      </svg>
+                    </button>
+                  </div>
                   <p class="person-gender"><?php echo $person->gender; ?></p>
                 </div>
 
                 <div class="space-y-3">
                   <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
                     <span class="font-medium text-gray-700">Birthday</span>
-                    <span class="text-gray-900 font-semibold"><?php echo $person->birthday; ?></span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-gray-900 font-semibold"><?php echo $person->birthday; ?></span>
+                      <button onclick="copyToClipboard('<?php echo addslashes($person->birthday); ?>')" 
+                              class="copy-btn bg-success-100 hover:bg-success-200">
+                        <svg class="w-4 h-4 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                   
                   <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
                     <span class="font-medium text-gray-700">SSN</span>
-                    <span class="text-gray-900 font-semibold"><?php echo $person->ssn; ?></span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-gray-900 font-semibold"><?php echo $person->ssn; ?></span>
+                      <button onclick="copyToClipboard('<?php echo addslashes($person->ssn); ?>')" 
+                              class="copy-btn bg-success-100 hover:bg-success-200">
+                        <svg class="w-4 h-4 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -307,8 +331,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php foreach($state_list as $row): ?>
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" 
                  class="group block p-4 bg-white hover:bg-gradient-to-br hover:from-primary-50 hover:to-secondary-50 rounded-xl border border-gray-200 hover:border-primary-300 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline text-center">
-                <div class="text-gray-800 group-hover:text-primary-700 font-medium text-sm">
-                  <?php echo $row->state; ?>
+                <div class="space-y-1">
+                  <div class="text-gray-800 group-hover:text-primary-700 font-bold text-lg lg:text-xl leading-tight">
+                    <?php echo $row->state; ?>
+                  </div>
+                  <div class="text-gray-500 group-hover:text-primary-500 text-xs font-medium whitespace-nowrap">
+                    Random Address
+                  </div>
                 </div>
               </a>
             <?php endforeach; ?>
@@ -326,8 +355,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php foreach($major_cities as $city): ?>
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($city->country_code);?>-<?php echo strtolower($city->state_code);?>/<?php echo $city->city_slug;?>" 
                  class="group block p-4 bg-white hover:bg-gradient-to-br hover:from-success-50 hover:to-success-100 rounded-xl border border-gray-200 hover:border-success-300 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline text-center">
-                <div class="text-gray-800 group-hover:text-success-700 font-medium text-sm">
-                  <?php echo htmlspecialchars($city->city); ?>
+                <div class="space-y-1">
+                  <div class="text-gray-800 group-hover:text-success-700 font-bold text-lg lg:text-xl leading-tight">
+                    <?php echo htmlspecialchars($city->city); ?>
+                  </div>
+                  <div class="text-gray-500 group-hover:text-success-500 text-xs font-medium whitespace-nowrap">
+                    Random Address
+                  </div>
                 </div>
               </a>
             <?php endforeach; ?>
@@ -342,6 +376,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
           <div class="grid-countries">
             <?php foreach($country_list as $row): ?>
+              <?php if(strtolower($row->country_code) != strtolower($address->country_code)): ?>
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
                  class="country-card" 
                  style="min-height: 60px;">
@@ -362,6 +397,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div>
               </a>
+              <?php endif; ?>
             <?php endforeach; ?>
           </div>
         </div>
