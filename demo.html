@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Address Generator - Tailwind CSS Demo</title>
+    <link rel="stylesheet" href="static/css/tailwind.css">
+</head>
+<body class="bg-gradient-hero min-h-screen">
+    
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 shadow-soft">
+        <div class="container-main">
+            <div class="flex justify-between items-center h-16">
+                <div>
+                    <a href="#" class="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors duration-200">
+                        RandomAddress
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-2">
+                    <a href="#" class="nav-link bg-success-50 text-success-700 border border-success-200 hover:bg-success-100">
+                        🇺🇸 USA Address
+                    </a>
+                    <a href="#" class="nav-link bg-primary-50 text-primary-700 border border-primary-200 hover:bg-primary-100">
+                        🇨🇦 Canada Address
+                    </a>
+                    <a href="#" class="nav-link bg-warning-50 text-warning-700 border border-warning-200 hover:bg-warning-100">
+                        🇩🇪 Germany Address
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        <div class="container-main pt-8 pb-4">
+            
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
+                    Random Address Generator
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto animate-slide-up">
+                    Generate authentic random addresses with complete personal information and contact details.
+                </p>
+                <button class="btn btn-primary text-base px-8 py-4 animate-bounce-soft">
+                    🎲 Generate New Address
+                </button>
+            </div>
+
+            <!-- Demo Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                
+                <!-- Address Card -->
+                <div class="lg:col-span-2">
+                    <div class="card card-hover">
+                        <div class="card-header">
+                            <h2 class="text-2xl font-bold text-white flex items-center">
+                                📍 Address Details
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="space-y-4">
+                                <div class="address-field">
+                                    <div class="address-field-label">
+                                        <div class="address-field-dot bg-primary-500"></div>
+                                        <span class="address-field-text">Street</span>
+                                    </div>
+                                    <div class="address-field-actions">
+                                        <span class="address-field-value">123 Main Street</span>
+                                        <button class="copy-btn bg-primary-100 hover:bg-primary-200">
+                                            📋
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="address-field">
+                                    <div class="address-field-label">
+                                        <div class="address-field-dot bg-secondary-500"></div>
+                                        <span class="address-field-text">City</span>
+                                    </div>
+                                    <div class="address-field-actions">
+                                        <span class="address-field-value">New York</span>
+                                        <button class="copy-btn bg-secondary-100 hover:bg-secondary-200">
+                                            📋
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="address-field">
+                                    <div class="address-field-label">
+                                        <div class="address-field-dot bg-success-500"></div>
+                                        <span class="address-field-text">State</span>
+                                    </div>
+                                    <div class="address-field-actions">
+                                        <span class="address-field-value">New York</span>
+                                        <button class="copy-btn bg-success-100 hover:bg-success-200">
+                                            📋
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="address-field">
+                                    <div class="address-field-label">
+                                        <div class="address-field-dot bg-warning-500"></div>
+                                        <span class="address-field-text">Zip Code</span>
+                                    </div>
+                                    <div class="address-field-actions">
+                                        <span class="address-field-value">10001</span>
+                                        <button class="copy-btn bg-warning-100 hover:bg-warning-200">
+                                            📋
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Person Card -->
+                <div class="lg:col-span-1">
+                    <div class="card card-hover">
+                        <div class="bg-gradient-to-r from-success-500 to-success-600 px-6 py-4">
+                            <h2 class="text-2xl font-bold text-white flex items-center">
+                                👤 Person Info
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="space-y-4">
+                                <div class="text-center mb-6">
+                                    <div class="person-avatar">
+                                        👤
+                                    </div>
+                                    <h3 class="person-name">John Doe</h3>
+                                    <p class="person-gender">Male</p>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
+                                        <span class="font-medium text-gray-700">Birthday</span>
+                                        <span class="text-gray-900 font-semibold">1990-01-01</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
+                                        <span class="font-medium text-gray-700">SSN</span>
+                                        <span class="text-gray-900 font-semibold">123-45-6789</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Countries Grid -->
+            <div class="mb-16">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">All Countries</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Generate random addresses from over 50 countries worldwide</p>
+                </div>
+                <div class="grid-countries">
+                    <a href="#" class="country-card">
+                        <div class="country-card-content">
+                            <div class="country-flag">
+                                <img src="static/img/flags/us_200_150.svg" alt="USA flag" class="w-14 h-10 object-cover rounded shadow-sm">
+                            </div>
+                            <div class="country-info">
+                                <span class="country-name">United States</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="country-card">
+                        <div class="country-card-content">
+                            <div class="country-flag">
+                                <img src="static/img/flags/ca_200_150.svg" alt="Canada flag" class="w-14 h-10 object-cover rounded shadow-sm">
+                            </div>
+                            <div class="country-info">
+                                <span class="country-name">Canada</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="country-card">
+                        <div class="country-card-content">
+                            <div class="country-flag">
+                                <img src="static/img/flags/de_200_150.svg" alt="Germany flag" class="w-14 h-10 object-cover rounded shadow-sm">
+                            </div>
+                            <div class="country-info">
+                                <span class="country-name">Germany</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="country-card">
+                        <div class="country-card-content">
+                            <div class="country-flag">
+                                <img src="static/img/flags/gb_200_150.svg" alt="UK flag" class="w-14 h-10 object-cover rounded shadow-sm">
+                            </div>
+                            <div class="country-info">
+                                <span class="country-name">United Kingdom</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="country-card">
+                        <div class="country-card-content">
+                            <div class="country-flag">
+                                <img src="static/img/flags/fr_200_150.svg" alt="France flag" class="w-14 h-10 object-cover rounded shadow-sm">
+                            </div>
+                            <div class="country-info">
+                                <span class="country-name">France</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="mt-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Everything you need to know about our random address generator</p>
+                </div>
+
+                <div class="card p-8 lg:p-12">
+                    <div class="prose prose-lg max-w-none">
+                        <div class="faq-item">
+                            <h3 class="faq-title">
+                                <div class="faq-icon bg-primary-100">
+                                    ❓
+                                </div>
+                                What's a Random Address Generator?
+                            </h3>
+                            <p class="faq-content">
+                                A random address generator is a tool that displays a random local address in a chosen country, including the street number, street name, city, and state. It also provides personal information and a zip code that matches the selected location.
+                            </p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3 class="faq-title">
+                                <div class="faq-icon bg-secondary-100">
+                                    ⚡
+                                </div>
+                                Why Do You Need a Random Address Generator?
+                            </h3>
+                            <p class="faq-content">
+                                Random address generators have several key uses including privacy protection, software testing, and development purposes. They help protect personal information while providing realistic data for testing applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200">
+        <div class="container-main py-8 lg:py-12">
+            <div class="text-center flex flex-col gap-4">
+                <p class="text-gray-600 text-sm font-medium">
+                    RandomAddress ©2025, all rights reserved
+                </p>
+                <p class="text-gray-600 text-sm font-medium">
+                    Contact us: support@randomaddress.com
+                </p>
+                <p class="text-gray-600 text-sm font-medium">
+                    <a href="#" class="text-primary-600 hover:text-primary-700 transition-colors duration-200">
+                        🔒 Privacy policy
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/custom.js"></script>
+</body>
+</html>

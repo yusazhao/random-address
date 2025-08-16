@@ -38,40 +38,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta name="twitter:title" content="Random <?php echo $address->country; ?> Address Generator" />
   <meta name="twitter:description" content="Generate random addresses with street, city, state, ZIP code for testing purposes." />
 
-
-  <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
-
-
+  <link rel="stylesheet" href="<?php echo base_url();?>static/css/tailwind.css">
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-main">
+<body class="bg-gradient-hero min-h-screen flex flex-col">
 
   <?php echo $header; ?>
 
   <main class="flex-1">
-    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-12 pb-4">
+    <div class="container-main pt-8 pb-4">
       <!-- Breadcrumb Navigation -->
-      <nav class="mb-6" aria-label="Breadcrumb">
-        <div class="text-base sm:text-xl lg:text-2xl font-bold text-gray-700" style="display: flex; align-items: center; flex-wrap: wrap; gap: 2px;">
-          <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 0;">Home</a>
-          <span class="text-gray-400" style="flex-shrink: 0;">/</span>
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <div class="flex items-center flex-wrap gap-1 text-base font-bold text-gray-700">
+          <a href="<?php echo base_url(); ?>" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">/</span>
           <?php if(isset($is_city_page) && $is_city_page): ?>
-            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 1; min-width: 0;">
+            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="breadcrumb-link">
               <?php echo $address->country; ?>
             </a>
-            <span class="text-gray-400" style="flex-shrink: 0;">/</span>
-            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>-<?php echo strtolower($address->state_code); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 1; min-width: 0;">
+            <span class="breadcrumb-separator">/</span>
+            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>-<?php echo strtolower($address->state_code); ?>" class="breadcrumb-link">
               <?php echo $address->state; ?>
             </a>
-            <span class="text-gray-400" style="flex-shrink: 0;">/</span>
-            <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;"><?php echo $address->city; ?> Random Address</span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current"><?php echo $address->city; ?> Random Address</span>
           <?php elseif($is_state_page): ?>
-            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 1; min-width: 0;">
+            <a href="<?php echo base_url(); ?>random-address-generator/<?php echo strtolower($address->country_code); ?>" class="breadcrumb-link">
               <?php echo $address->country; ?>
             </a>
-            <span class="text-gray-400" style="flex-shrink: 0;">/</span>
-            <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;"><?php echo $address->state; ?> Random Address</span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current"><?php echo $address->state; ?> Random Address</span>
           <?php else: ?>
-            <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;"><?php echo $address->country; ?> Random Address</span>
+            <span class="breadcrumb-current"><?php echo $address->country; ?> Random Address</span>
           <?php endif; ?>
         </div>
         <!-- Hidden breadcrumb for SEO -->
@@ -135,168 +132,183 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       }
       </script>
       
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
-        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900"><?php if(array_key_exists($address->country_code,$tier1_array)){
-          echo $tier1_array[$address->country_code];
-        }else{echo $address->country; } ?> Random Address Generator</h1>
+      <!-- Header Section with Title and Refresh Button -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
+          <?php if(array_key_exists($address->country_code,$tier1_array)){
+            echo $tier1_array[$address->country_code];
+          }else{echo $address->country; } ?> Address Generator
+        </h1>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto animate-slide-up">
+          Generate authentic random addresses for <?php echo $address->country; ?> with complete personal information and contact details.
+        </p>
+        
+        <a href="<?php echo base_url().uri_string(); ?>" 
+           class="btn btn-primary text-base px-8 py-4 animate-bounce-soft">
+          <svg class="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          Generate New Address
+        </a>
       </div>
 
-      <!-- Random Address Section with centered title and right-aligned refresh button -->
-      <div class="mb-6">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
-          <!-- Empty div for spacing on large screens -->
-          <div class="hidden sm:block sm:flex-1"></div>
-          
-          <!-- Centered title -->
-          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 text-left sm:text-center sm:flex-1">Random Address</h2>
-          
-          <!-- Right-aligned button -->
-          <div class="flex justify-center sm:justify-end sm:flex-1 mt-4 sm:mt-0">
-            <a href="<?php echo base_url().uri_string(); ?>" 
-               class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all duration-200 hover:shadow-lg no-underline whitespace-nowrap">
-              <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-              </svg>
-              New Random Address in <?php echo strtoupper($address->country_code); ?>
-            </a>
+      <!-- Main Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Address Information Card -->
+        <div class="lg:col-span-2">
+          <div class="card card-hover">
+            <div class="card-header">
+              <h2 class="text-2xl font-bold text-white flex items-center">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                Address Details
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="space-y-4">
+                <div class="address-field">
+                  <div class="address-field-label">
+                    <div class="address-field-dot bg-primary-500"></div>
+                    <span class="address-field-text">Street</span>
+                  </div>
+                  <div class="address-field-actions">
+                    <span class="address-field-value"><?php echo $address->street; ?></span>
+                    <button onclick="copyToClipboard('<?php echo addslashes($address->street); ?>')" 
+                            class="copy-btn bg-primary-100 hover:bg-primary-200">
+                      <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="address-field">
+                  <div class="address-field-label">
+                    <div class="address-field-dot bg-secondary-500"></div>
+                    <span class="address-field-text">City/Town</span>
+                  </div>
+                  <div class="address-field-actions">
+                    <span class="address-field-value"><?php echo $address->city; ?></span>
+                    <button onclick="copyToClipboard('<?php echo addslashes($address->city); ?>')" 
+                            class="copy-btn bg-secondary-100 hover:bg-secondary-200">
+                      <svg class="w-4 h-4 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="address-field">
+                  <div class="address-field-label">
+                    <div class="address-field-dot bg-success-500"></div>
+                    <span class="address-field-text">State/Province</span>
+                  </div>
+                  <div class="address-field-actions">
+                    <span class="address-field-value"><?php echo $address->state; ?></span>
+                    <button onclick="copyToClipboard('<?php echo addslashes($address->state); ?>')" 
+                            class="copy-btn bg-success-100 hover:bg-success-200">
+                      <svg class="w-4 h-4 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="address-field">
+                  <div class="address-field-label">
+                    <div class="address-field-dot bg-warning-500"></div>
+                    <span class="address-field-text">Zip Code</span>
+                  </div>
+                  <div class="address-field-actions">
+                    <span class="address-field-value"><?php echo $address->zip_code; ?></span>
+                    <button onclick="copyToClipboard('<?php echo addslashes($address->zip_code); ?>')" 
+                            class="copy-btn bg-warning-100 hover:bg-warning-200">
+                      <svg class="w-4 h-4 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="address-field">
+                  <div class="address-field-label">
+                    <div class="address-field-dot bg-danger-500"></div>
+                    <span class="address-field-text">Phone Number</span>
+                  </div>
+                  <div class="address-field-actions">
+                    <span class="address-field-value"><?php echo $address->phone; ?></span>
+                    <button onclick="copyToClipboard('<?php echo addslashes($address->phone); ?>')" 
+                            class="copy-btn bg-danger-100 hover:bg-danger-200">
+                      <svg class="w-4 h-4 text-danger-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Person Information Card -->
+        <div class="lg:col-span-1">
+          <div class="card card-hover">
+            <div class="bg-gradient-to-r from-success-500 to-success-600 px-6 py-4">
+              <h2 class="text-2xl font-bold text-white flex items-center">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                Person Info
+              </h2>
+            </div>
+            <div class="card-body">
+              <?php if($person): ?>
+              <div class="space-y-4">
+                <div class="text-center mb-6">
+                  <div class="person-avatar">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="person-name"><?php echo $person->full_name; ?></h3>
+                  <p class="person-gender"><?php echo $person->gender; ?></p>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
+                    <span class="font-medium text-gray-700">Birthday</span>
+                    <span class="text-gray-900 font-semibold"><?php echo $person->birthday; ?></span>
+                  </div>
+                  
+                  <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
+                    <span class="font-medium text-gray-700">SSN</span>
+                    <span class="text-gray-900 font-semibold"><?php echo $person->ssn; ?></span>
+                  </div>
+                </div>
+              </div>
+              <?php endif; ?>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 mb-12">
-        <dl class="space-y-6">
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Street</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $address->street; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->street); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-                </button>
-              </dd>
-            </div>
-
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">City/Town</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $address->city; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->city); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">State/Province/Rrea</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $address->state; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->state); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Zip Code</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $address->zip_code; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->zip_code); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-                      <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Phone Number</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $address->phone; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($address->phone); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-        </dl>
-      </div>
-
-
-      <div class="mb-12">
-        <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Random Person Information</h2>
-        <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
-          <?php if($person): ?>
-          <dl class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Full Name</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $person->full_name; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->full_name); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Gender</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $person->gender; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->gender); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-300 pb-4">
-              <dt class="font-semibold text-gray-800 w-full sm:w-1/3 mb-2 sm:mb-0 text-sm uppercase tracking-wide">Birthday</dt>
-              <dd class="text-gray-900 sm:w-2/3 text-xl font-medium flex items-center justify-between">
-                <span><?php echo $person->birthday; ?></span>
-                <button onclick="copyToClipboard('<?php echo addslashes($person->birthday); ?>')" class="copy-btn ml-4 flex items-center">
-                  <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
-
-                </button>
-              </dd>
-            </div>
-
-          </dl>
-          <?php endif; ?>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="space-y-12">
+      <!-- Navigation Sections -->
+      <div class="space-y-16">
         <?php if(!empty($state_list)): ?>
         <div>
-          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Random address by <?php if(array_key_exists($address->country_code,$tier1_array)){
-            echo $tier1_array[$address->country_code];
-          }else{echo $address->country; } ?> states</h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Browse by States</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Explore random addresses from different states across <?php echo $address->country; ?></p>
+          </div>
+          <div class="grid-states">
             <?php foreach($state_list as $row): ?>
-              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" class="state-card rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 transition-all duration-300 font-medium border-2 border-gray-300 hover:border-blue-400 hover:shadow-lg transform hover:scale-105 no-underline">
-                <div class="text-content">
-                  <span class="state-name"><?php echo $row->state; ?></span>
-                  <span class="random-address-text">Random Address</span>
+              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" 
+                 class="group block p-4 bg-white hover:bg-gradient-to-br hover:from-primary-50 hover:to-secondary-50 rounded-xl border border-gray-200 hover:border-primary-300 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline text-center">
+                <div class="text-gray-800 group-hover:text-primary-700 font-medium text-sm">
+                  <?php echo $row->state; ?>
                 </div>
               </a>
             <?php endforeach; ?>
@@ -305,16 +317,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php endif; ?>
 
         <?php if(!empty($major_cities)): ?>
-        <div class="<?php echo !empty($state_list) ? 'mt-16' : 'mt-16'; ?>">
-          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Major cities in <?php if(array_key_exists($address->country_code,$tier1_array)){
-            echo $tier1_array[$address->country_code];
-          }else{echo $address->country; } ?></h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4">
+        <div>
+          <div class="text-center mb-10">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Major Cities</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Get random addresses from the most popular cities in <?php echo $address->country; ?></p>
+          </div>
+          <div class="grid-cities">
             <?php foreach($major_cities as $city): ?>
-              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($city->country_code);?>-<?php echo strtolower($city->state_code);?>/<?php echo $city->city_slug;?>" class="state-card rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 transition-all duration-300 font-medium border-2 border-gray-300 hover:border-blue-400 hover:shadow-lg transform hover:scale-105 no-underline">
-                <div class="text-content">
-                  <span class="state-name"><?php echo htmlspecialchars($city->city); ?></span>
-                  <span class="random-address-text">Random Address</span>
+              <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($city->country_code);?>-<?php echo strtolower($city->state_code);?>/<?php echo $city->city_slug;?>" 
+                 class="group block p-4 bg-white hover:bg-gradient-to-br hover:from-success-50 hover:to-success-100 rounded-xl border border-gray-200 hover:border-success-300 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline text-center">
+                <div class="text-gray-800 group-hover:text-success-700 font-medium text-sm">
+                  <?php echo htmlspecialchars($city->city); ?>
                 </div>
               </a>
             <?php endforeach; ?>
@@ -322,30 +335,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <?php endif; ?>
 
-        <div class="<?php echo (!empty($state_list) || !empty($major_cities)) ? 'mt-16' : ''; ?>">
-          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">All Countries</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div>
+          <div class="text-center mb-10">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">All Countries</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Generate random addresses from over 50 countries worldwide</p>
+          </div>
+          <div class="grid-countries">
             <?php foreach($country_list as $row): ?>
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
-                 class="country-card group block p-4 bg-white/60 hover:bg-white/90 rounded-2xl border-2 border-gray-300 hover:border-blue-400 transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline" 
-                 style="min-height: 45px !important; height: auto !important;">
-                <div class="flex items-center space-x-4">
-                  <div class="flex-shrink-0">
+                 class="country-card" 
+                 style="min-height: 60px;">
+                <div class="country-card-content">
+                  <div class="country-flag">
                     <?php 
                     $flag_code = strtolower($row->country_code);
-                    // 特殊处理：UK使用GB的国旗
                     if($flag_code == 'uk') {
                       $flag_code = 'gb';
                     }
                     ?>
                     <img src="<?php echo base_url();?>static/img/flags/<?php echo $flag_code; ?>_200_150.svg" 
                          alt="<?php echo $row->country; ?> flag" 
-                         class="w-14 h-10 object-cover rounded shadow-sm flex-shrink-0"
                          onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
                   </div>
-                  <div class="text-content">
+                  <div class="country-info">
                     <span class="country-name"><?php echo $row->country; ?></span>
-                    <span class="random-address-text">Random Address</span>
                   </div>
                 </div>
               </a>
@@ -353,51 +366,96 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
 
+        <!-- FAQ Section -->
+        <div class="mt-20">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Everything you need to know about our random address generator</p>
+          </div>
 
-
-        <!-- FAQ Section Title -->
-        <div class="<?php echo !empty($state_list) ? 'mt-24' : 'mt-16'; ?> mb-6" style="margin-top: <?php echo !empty($state_list) ? '4rem' : '4rem'; ?> !important;">
-          <h2 class="text-3xl lg:text-3xl font-bold text-blue-700 mb-6">Frequently Asked Questions</h2>
-        </div>
-
-        <!-- Informational Content Section -->
-        <div class="mb-6" style="margin-bottom: 3rem !important;">
-          <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100">
+          <div class="card p-8 lg:p-12">
             <div class="prose prose-lg max-w-none">
-              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">What's a Random Address Generator?</h3>
-              <p class="text-gray-700 leading-relaxed mb-6">
-                A random address generator is a tool that displays a random local address in a chosen country, including the street number, street name, city, and state. It also provides personal information and a zip code that matches the selected location.
-              </p>
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-primary-100">
+                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  What's a Random Address Generator?
+                </h3>
+                <p class="faq-content">
+                  A random address generator is a tool that displays a random local address in a chosen country, including the street number, street name, city, and state. It also provides personal information and a zip code that matches the selected location.
+                </p>
+              </div>
 
-              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 mt-12">Why Do You Need a Random Address Generator?</h3>
-              <p class="text-gray-700 leading-relaxed mb-6">
-                Random address generators have several key uses. Let's explore some common scenarios:
-              </p>
-              <ul class="list-disc pl-6 text-gray-700 leading-relaxed space-y-3 mb-6">
-                <li><strong>Privacy Protection:</strong> When you're signing up for something online and worry about sharing your real address, a random address can be a safe alternative, helping to protect your personal details.</li>
-                <li><strong>Software Testing:</strong> Developers use these tools to test new applications or websites, ensuring location-based features work correctly without needing real addresses.</li>
-              </ul>
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-secondary-100">
+                    <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  Why Do You Need a Random Address Generator?
+                </h3>
+                <p class="faq-content mb-6">
+                  Random address generators have several key uses. Let's explore some common scenarios:
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div class="bg-primary-50 p-6 rounded-xl">
+                    <h4 class="font-bold text-primary-800 mb-3">Privacy Protection</h4>
+                    <p class="text-primary-700">When you're signing up for something online and worry about sharing your real address, a random address can be a safe alternative, helping to protect your personal details.</p>
+                  </div>
+                  <div class="bg-secondary-50 p-6 rounded-xl">
+                    <h4 class="font-bold text-secondary-800 mb-3">Software Testing</h4>
+                    <p class="text-secondary-700">Developers use these tools to test new applications or websites, ensuring location-based features work correctly without needing real addresses.</p>
+                  </div>
+                </div>
+              </div>
 
-              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 mt-12">How to Use a Random Address Generator</h3>
-              <p class="text-gray-700 leading-relaxed mb-6">
-                Our Random Address Generator is designed for simplicity and efficiency. Follow these easy steps to get started:
-              </p>
-              <ul class="list-disc pl-6 text-gray-700 leading-relaxed space-y-3 mb-6">
-                <li><strong>Choose Your Country:</strong> Browse through our "All Countries" section or select from the "Random address by US states" if you need a US-specific address. We support over 50 countries worldwide including popular regions like the United States, Canada, United Kingdom, Australia, Germany, France, and many more.</li>
-                <li><strong>Instant Generation:</strong> Simply click on any country or state link - no forms to fill out, no dropdowns to navigate. Your random address generates automatically upon page load, saving you time and clicks.</li>
-                <li><strong>Complete Data Package:</strong> Each generation provides a comprehensive dataset including full address details (street, city, state/province, zip/postal code), random personal information (name, gender, birthday, SSN), and even random credit card information for testing purposes.</li>
-                <li><strong>Easy Copy & Use:</strong> Click the copy button next to any data field to instantly copy it to your clipboard. Each piece of information can be copied individually for maximum flexibility.</li>
-                <li><strong>Refresh for More:</strong> Need another address from the same location? Simply click the refresh button to generate a new random address while staying on the same page.</li>
-                <li><strong>Mobile Optimized:</strong> Our tool works seamlessly across all devices - desktop, tablet, and mobile - with responsive design ensuring perfect usability everywhere.</li>
-              </ul>
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-success-100">
+                    <svg class="w-5 h-5 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                    </svg>
+                  </div>
+                  How to Use Our Generator
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div class="bg-success-50 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center mb-4">
+                      <span class="text-success-600 font-bold text-xl">1</span>
+                    </div>
+                    <h4 class="font-bold text-success-800 mb-3">Choose Country</h4>
+                    <p class="text-success-700">Browse through our "All Countries" section or select from specific states. We support over 50 countries worldwide.</p>
+                  </div>
+                  <div class="bg-success-50 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center mb-4">
+                      <span class="text-success-600 font-bold text-xl">2</span>
+                    </div>
+                    <h4 class="font-bold text-success-800 mb-3">Instant Generation</h4>
+                    <p class="text-success-700">Simply click on any country or state link - no forms to fill out. Your random address generates automatically.</p>
+                  </div>
+                  <div class="bg-success-50 p-6 rounded-xl">
+                    <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center mb-4">
+                      <span class="text-success-600 font-bold text-xl">3</span>
+                    </div>
+                    <h4 class="font-bold text-success-800 mb-3">Copy & Use</h4>
+                    <p class="text-success-700">Click the copy button next to any data field to instantly copy it to your clipboard. Each piece can be copied individually.</p>
+                  </div>
+                </div>
+              </div>
 
-              <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 mt-12">How Our Random Address Generator Stands Out</h3>
-              <p class="text-gray-700 leading-relaxed mb-6">
-                What makes our Random Address Generator different is that our data is reliable, and the addresses provided are for real, publicly accessible locations.
-              </p>
-              <p class="text-gray-700 leading-relaxed mb-6">
-                Thanks for using the Random Address Generator!
-              </p>
+              <div class="text-center">
+                <h3 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">How Our Generator Stands Out</h3>
+                <p class="faq-content">
+                  What makes our Random Address Generator different is that our data is reliable, and the addresses provided are for real, publicly accessible locations.
+                </p>
+                <p class="faq-content mt-4">
+                  Thanks for using the Random Address Generator!
+                </p>
+              </div>
             </div>
           </div>
         </div>

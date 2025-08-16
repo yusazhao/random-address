@@ -1,184 +1,168 @@
-<!-- Navigation Bar -->
-<nav class="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50 relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20 md:h-22 lg:h-26">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomAddress</title>
+    <link rel="stylesheet" href="<?php echo base_url();?>static/css/tailwind.css">
+</head>
+<body class="bg-gradient-hero min-h-screen">
+
+<nav class="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 shadow-soft">
+  <div class="container-main">
+    <div class="flex justify-between items-center h-16">
       
       <!-- Logo -->
-      <div class="flex-shrink-0">
-        <a href="<?php echo base_url();?>" class="text-2xl md:text-3xl lg:text-custom-logo xl:text-4xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200" title="RandomAddress - Free Random Data Generator for Testing and Development">
+      <div>
+        <a href="<?php echo base_url();?>" class="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors duration-200">
           RandomAddress
         </a>
       </div>
       
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex lg:items-center lg:space-x-4">
-        <a href="<?php echo base_url();?>random-address-generator/us" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-          US Address
+      <div class="hidden lg:flex items-center space-x-2">
+        <a href="<?php echo base_url();?>random-address-generator/us" 
+           class="nav-link bg-success-50 text-success-700 border border-success-200 hover:bg-success-100">
+          <img src="<?php echo base_url();?>static/img/flags/us_200_150.svg" alt="USA flag" 
+               class="w-4 h-3 mr-2 object-cover rounded shadow-sm"
+               onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+          USA Address
         </a>
-        <a href="<?php echo base_url();?>random-address-generator/ca" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-          CA Address
+        <a href="<?php echo base_url();?>random-address-generator/ca" 
+           class="nav-link bg-primary-50 text-primary-700 border border-primary-200 hover:bg-primary-100">
+          <img src="<?php echo base_url();?>static/img/flags/ca_200_150.svg" alt="Canada flag" 
+               class="w-4 h-3 mr-2 object-cover rounded shadow-sm"
+               onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+          Canada Address
         </a>
-        <a href="<?php echo base_url();?>random-address-generator/de" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-          DE Address
+        <a href="<?php echo base_url();?>random-address-generator/de" 
+           class="nav-link bg-warning-50 text-warning-700 border border-warning-200 hover:bg-warning-100">
+          <img src="<?php echo base_url();?>static/img/flags/de_200_150.svg" alt="Germany flag" 
+               class="w-4 h-3 mr-2 object-cover rounded shadow-sm"
+               onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+          Germany Address
         </a>
-        <a href="<?php echo base_url();?>random-address-generator/uk" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+        <a href="<?php echo base_url();?>random-address-generator/uk" 
+           class="nav-link bg-danger-50 text-danger-700 border border-danger-200 hover:bg-danger-100">
+          <img src="<?php echo base_url();?>static/img/flags/gb_200_150.svg" alt="UK flag" 
+               class="w-4 h-3 mr-2 object-cover rounded shadow-sm"
+               onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
           UK Address
         </a>
-        <a href="<?php echo base_url();?>random-address-generator-countries" class="px-4 py-3 rounded-lg text-base lg:text-custom-menu font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+        <a href="<?php echo base_url();?>random-address-generator-countries" 
+           class="nav-link bg-secondary-50 text-secondary-700 border border-secondary-200 hover:bg-secondary-100">
+          <svg class="w-4 h-4 mr-2 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
           All Countries
         </a>
       </div>
       
-      <!-- Tablet Navigation -->
-      <div class="hidden md:flex lg:hidden">
-        <div class="relative">
-          <button id="tablet-menu-button" class="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-            <span>Menu</span>
-            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div id="tablet-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 hidden z-50">
-            <div class="py-1">
-              <a href="<?php echo base_url();?>random-address-generator/us" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇺🇸 US Address</a>
-              <a href="<?php echo base_url();?>random-address-generator/ca" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇨🇦 CA Address</a>
-              <a href="<?php echo base_url();?>random-address-generator/de" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇩🇪 DE Address</a>
-              <a href="<?php echo base_url();?>random-address-generator/uk" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🇬🇧 UK Address</a>
-              <a href="<?php echo base_url();?>random-address-generator-countries" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200">🌍 All Countries</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
       <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="flex items-center px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 border border-gray-200 hover:border-blue-300" aria-label="Toggle menu">
-          <svg id="menu-icon" class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-          <svg id="close-icon" class="h-5 w-5 mr-2 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-          <span class="text-sm font-medium">Menu</span>
-        </button>
-      </div>
+      <button type="button" onclick="toggleMenu()" 
+              class="lg:hidden flex items-center px-3 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <span class="text-sm font-medium">Menu</span>
+      </button>
     </div>
   </div>
   
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 absolute top-full left-0 right-0 shadow-lg" style="z-index: 9999;">
-    <div class="px-4 py-3 space-y-2">
-      <a href="<?php echo base_url();?>random-address-generator/us" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-        <span class="mr-3">🇺🇸</span>
-        <span>US Address</span>
+  <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-large">
+    <div class="p-4 space-y-3">
+      <a href="<?php echo base_url();?>random-address-generator/us" 
+         class="mobile-nav-link bg-success-50 border-success-200 text-success-700">
+        <img src="<?php echo base_url();?>static/img/flags/us_200_150.svg" alt="USA flag" 
+             class="w-6 h-4 object-cover rounded shadow-sm"
+             onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+        <span>USA Random Address</span>
+        <svg class="w-4 h-4 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
       </a>
-      <a href="<?php echo base_url();?>random-address-generator/ca" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-        <span class="mr-3">🇨🇦</span>
-        <span>CA Address</span>
+      <a href="<?php echo base_url();?>random-address-generator/ca" 
+         class="mobile-nav-link bg-primary-50 border-primary-200 text-primary-700">
+        <img src="<?php echo base_url();?>static/img/flags/ca_200_150.svg" alt="Canada flag" 
+             class="w-6 h-4 object-cover rounded shadow-sm"
+             onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+        <span>Canada Random Address</span>
+        <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
       </a>
-      <a href="<?php echo base_url();?>random-address-generator/de" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-        <span class="mr-3">🇩🇪</span>
-        <span>DE Address</span>
+      <a href="<?php echo base_url();?>random-address-generator/de" 
+         class="mobile-nav-link bg-warning-50 border-warning-200 text-warning-700">
+        <img src="<?php echo base_url();?>static/img/flags/de_200_150.svg" alt="Germany flag" 
+             class="w-6 h-4 object-cover rounded shadow-sm"
+             onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+        <span>Germany Random Address</span>
+        <svg class="w-4 h-4 text-warning-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
       </a>
-      <a href="<?php echo base_url();?>random-address-generator/uk" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-        <span class="mr-3">🇬🇧</span>
-        <span>UK Address</span>
+      <a href="<?php echo base_url();?>random-address-generator/uk" 
+         class="mobile-nav-link bg-danger-50 border-danger-200 text-danger-700">
+        <img src="<?php echo base_url();?>static/img/flags/gb_200_150.svg" alt="UK flag" 
+             class="w-6 h-4 object-cover rounded shadow-sm"
+             onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
+        <span>UK Random Address</span>
+        <svg class="w-4 h-4 text-danger-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
       </a>
-      <a href="<?php echo base_url();?>random-address-generator-countries" class="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-        <span class="mr-3">🌍</span>
+      <a href="<?php echo base_url();?>random-address-generator-countries" 
+         class="mobile-nav-link bg-secondary-50 border-secondary-200 text-secondary-700">
+        <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
         <span>All Countries</span>
+        <svg class="w-4 h-4 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
       </a>
     </div>
   </div>
 </nav>
 
+<style>
+.mobile-nav-link {
+  @apply flex items-center p-4 rounded-xl border transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline;
+}
+
+.mobile-nav-link img,
+.mobile-nav-link svg {
+  @apply flex-shrink-0;
+}
+
+.mobile-nav-link span {
+  @apply font-semibold text-base flex-1 ml-3;
+}
+
+.mobile-nav-link svg:last-child {
+  @apply ml-auto;
+}
+</style>
+
 <script>
-// Navigation functionality
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  if (menu) {
+    menu.classList.toggle('hidden');
+  }
+}
+
+// Close mobile menu when clicking on links
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile menu elements
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  
-  // Tablet menu elements
-  const tabletMenuButton = document.getElementById('tablet-menu-button');
-  const tabletMenu = document.getElementById('tablet-menu');
-  
-  // Mobile menu toggle
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const isHidden = mobileMenu.classList.contains('hidden');
-      
-      if (isHidden) {
-        mobileMenu.classList.remove('hidden');
-        menuIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
-      } else {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+  const menuLinks = document.querySelectorAll('#mobile-menu a');
+  menuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) {
+        menu.classList.add('hidden');
       }
     });
-  }
-  
-  // Tablet menu toggle
-  if (tabletMenuButton && tabletMenu) {
-    tabletMenuButton.addEventListener('click', function(e) {
-      e.stopPropagation();
-      tabletMenu.classList.toggle('hidden');
-    });
-  }
-  
-  // Close menus when clicking outside
-  document.addEventListener('click', function(event) {
-    // Close mobile menu
-    if (mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-      mobileMenu.classList.add('hidden');
-      menuIcon.classList.remove('hidden');
-      closeIcon.classList.add('hidden');
-    }
-    
-    // Close tablet menu
-    if (tabletMenu && !tabletMenu.contains(event.target) && !tabletMenuButton.contains(event.target)) {
-      tabletMenu.classList.add('hidden');
-    }
   });
-  
-  // Close mobile menu when window is resized to larger screen
-  window.addEventListener('resize', function() {
-    if (window.innerWidth >= 768 && mobileMenu) {
-      mobileMenu.classList.add('hidden');
-      menuIcon.classList.remove('hidden');
-      closeIcon.classList.add('hidden');
-    }
-    
-    if (window.innerWidth >= 1024 && tabletMenu) {
-      tabletMenu.classList.add('hidden');
-    }
-  });
-  
-  // Handle menu item clicks on mobile
-  const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
-  if (mobileMenuLinks) {
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      });
-    });
-  }
-  
-  // Handle menu item clicks on tablet
-  const tabletMenuLinks = tabletMenu?.querySelectorAll('a');
-  if (tabletMenuLinks) {
-    tabletMenuLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        tabletMenu.classList.add('hidden');
-      });
-    });
-  }
 });
 </script>

@@ -13,21 +13,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Canonical URL -->
   <link rel="canonical" href="<?php echo current_url(); ?>" />
 
-  <link rel="stylesheet" href="<?php echo base_url();?>static/css/custom.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>static/css/tailwind.css">
 
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-main">
+<body class="bg-gradient-hero min-h-screen flex flex-col">
 
   <?php echo $header; ?>
 
   <main class="flex-1">
-    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-12 pb-4">
+    <div class="container-main pt-8 pb-4">
       <!-- Breadcrumb Navigation -->
       <nav class="mb-6" aria-label="Breadcrumb">
-        <div class="text-base sm:text-xl lg:text-2xl font-bold text-gray-700" style="display: flex; align-items: center; flex-wrap: wrap; gap: 2px;">
-          <a href="<?php echo base_url(); ?>" class="hover:text-blue-600 transition-colors" style="color: inherit; text-decoration: none; flex-shrink: 0;">Home</a>
-          <span class="text-gray-400" style="flex-shrink: 0;">/</span>
-          <span class="text-gray-900 font-medium" style="flex-shrink: 1; min-width: 0;">All Countries</span>
+        <div class="flex items-center flex-wrap gap-2 text-base sm:text-lg lg:text-xl font-bold text-gray-700">
+          <a href="<?php echo base_url(); ?>" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">All Countries</span>
         </div>
         <!-- Hidden breadcrumb for SEO -->
         <ol class="hidden" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -42,16 +42,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ol>
       </nav>
       
-      <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Random Address Generator by Countries</h1>
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8 text-center animate-fade-in">
+        Random Address Generator by Countries
+      </h1>
 
-      <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 mb-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <div class="glass rounded-3xl p-6 lg:p-10 shadow-large mb-12 animate-slide-up">
+        <div class="grid-countries">
           <?php foreach($country_list as $row): ?>
             <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code); ?>" 
-               class="country-card group block p-4 bg-white/60 hover:bg-white/90 rounded-2xl border-2 border-gray-300 hover:border-blue-400 transition-all duration-300 hover:shadow-xl hover:scale-105 no-underline" 
-               style="min-height: 45px !important; height: auto !important;">
-              <div class="flex items-center space-x-4">
-                <div class="flex-shrink-0">
+               class="country-card">
+              <div class="country-card-content">
+                <div class="country-flag">
                   <?php 
                   $flag_code = strtolower($row->country_code);
                   // 特殊处理：UK使用GB的国旗
@@ -61,14 +62,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   ?>
                   <img src="<?php echo base_url();?>static/img/flags/<?php echo $flag_code; ?>_200_150.svg" 
                        alt="<?php echo $row->country; ?> flag" 
-                       class="w-14 h-10 object-cover rounded shadow-sm flex-shrink-0"
                        onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
                 </div>
-                <div class="min-w-0 flex-1">
-                  <div class="transition-colors">
-                    <span class="country-name"><?php echo $row->country; ?></span>
-                    <span class="random-address-text">Random Address</span>
-                  </div>
+                <div class="country-info">
+                  <span class="country-name"><?php echo $row->country; ?></span>
+                  <span class="random-address-text">Random Address</span>
                 </div>
               </div>
             </a>
@@ -80,8 +78,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </main>
 
   <?php echo $footer; ?>
-
-
 
 </body>
 </html>

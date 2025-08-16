@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #374151;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Custom Components */
+@layer components {
+  /* Navigation */
+  .nav-link {
+    @apply flex items-center px-3 py-2 text-sm font-semibold text-gray-700 rounded-lg transition-all duration-200 hover:bg-gray-100 hover:text-primary-600;
+  }
+  
+  .nav-link-active {
+    @apply bg-primary-50 text-primary-600 border border-primary-200;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-medium hover:border-primary-200 hover:-translate-y-1;
+  }
+  
+  .card-header {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-600 px-6 py-4;
+  }
+  
+  .card-body {
+    @apply p-6;
+  }
+  
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 text-white hover:from-primary-700 hover:to-secondary-700 focus:ring-primary-500 shadow-soft hover:shadow-medium transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500;
+  }
+  
+  .btn-success {
+    @apply bg-gradient-to-r from-success-500 to-success-600 text-white hover:from-success-600 hover:to-success-700 focus:ring-success-500;
+  }
+  
+  .btn-warning {
+    @apply bg-gradient-to-r from-warning-500 to-warning-600 text-white hover:from-warning-600 hover:to-warning-700 focus:ring-warning-500;
+  }
+  
+  .btn-danger {
+    @apply bg-gradient-to-r from-danger-500 to-danger-600 text-white hover:from-danger-600 hover:to-danger-700 focus:ring-danger-500;
+  }
+  
+  /* Copy Button */
+  .copy-btn {
+    @apply p-2 rounded-lg transition-all duration-200 cursor-pointer border-none bg-transparent hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  /* Country Card */
+  .country-card {
+    @apply block p-4 bg-white/60 backdrop-blur-sm rounded-xl border-2 border-gray-200 transition-all duration-300 hover:bg-white/90 hover:border-primary-400 hover:shadow-large transform hover:scale-105 no-underline;
+  }
+  
+  .country-card-content {
+    @apply flex items-center gap-4;
+  }
+  
+  .country-flag {
+    @apply flex-shrink-0;
+  }
+  
+  .country-flag img {
+    @apply w-14 h-10 object-cover rounded shadow-sm flex-shrink-0;
+  }
+  
+  .country-info {
+    @apply min-w-0 flex-1;
+  }
+  
+  .country-name {
+    @apply block font-semibold text-gray-700 mb-1;
+  }
+  
+  .random-address-text {
+    @apply block text-sm text-gray-500;
+  }
+  
+  /* Breadcrumb */
+  .breadcrumb-link {
+    @apply text-gray-600 hover:text-primary-600 transition-colors duration-200;
+  }
+  
+  .breadcrumb-separator {
+    @apply text-gray-400 mx-2;
+  }
+  
+  .breadcrumb-current {
+    @apply text-gray-900 font-medium;
+  }
+  
+  /* Address Field */
+  .address-field {
+    @apply flex items-center justify-between p-4 bg-gray-50 rounded-lg;
+  }
+  
+  .address-field-label {
+    @apply flex items-center;
+  }
+  
+  .address-field-dot {
+    @apply w-3 h-3 rounded-full mr-4;
+  }
+  
+  .address-field-text {
+    @apply font-semibold text-gray-700 uppercase tracking-wide text-sm;
+  }
+  
+  .address-field-value {
+    @apply text-gray-900 font-medium text-lg;
+  }
+  
+  .address-field-actions {
+    @apply flex items-center space-x-3;
+  }
+  
+  /* Person Info */
+  .person-avatar {
+    @apply w-16 h-16 bg-gradient-to-r from-success-400 to-success-500 rounded-full flex items-center justify-center mx-auto mb-3;
+  }
+  
+  .person-name {
+    @apply text-xl font-bold text-gray-800;
+  }
+  
+  .person-gender {
+    @apply text-gray-600 capitalize;
+  }
+  
+  /* FAQ Section */
+  .faq-item {
+    @apply mb-12;
+  }
+  
+  .faq-title {
+    @apply text-2xl lg:text-3xl font-bold text-gray-800 mb-6 flex items-center;
+  }
+  
+  .faq-icon {
+    @apply w-8 h-8 rounded-lg flex items-center justify-center mr-4;
+  }
+  
+  .faq-content {
+    @apply text-gray-700 leading-relaxed text-lg;
+  }
+  
+  /* Grid Layouts */
+  .grid-countries {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4;
+  }
+  
+  .grid-states {
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3;
+  }
+  
+  .grid-cities {
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3;
+  }
+  
+  /* Responsive Containers */
+  .container-main {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-content {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Background Gradients */
+  .bg-gradient-main {
+    @apply bg-gradient-to-br from-primary-500 via-secondary-500 to-primary-600;
+  }
+  
+  .bg-gradient-hero {
+    @apply bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}
