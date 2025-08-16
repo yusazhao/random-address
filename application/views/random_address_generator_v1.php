@@ -170,11 +170,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="card-body">
               <div class="space-y-4">
                 <div class="address-field">
-                  <div class="address-field-label">
+                  <div class="address-field-header">
                     <div class="address-field-dot bg-primary-500"></div>
                     <span class="address-field-text">Street</span>
                   </div>
-                  <div class="address-field-actions">
+                  <div class="address-field-content">
                     <span class="address-field-value"><?php echo $address->street; ?></span>
                     <button onclick="copyToClipboard('<?php echo addslashes($address->street); ?>')" 
                             class="copy-btn bg-primary-100 hover:bg-primary-200">
@@ -186,11 +186,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
                 <div class="address-field">
-                  <div class="address-field-label">
+                  <div class="address-field-header">
                     <div class="address-field-dot bg-secondary-500"></div>
                     <span class="address-field-text">City/Town</span>
                   </div>
-                  <div class="address-field-actions">
+                  <div class="address-field-content">
                     <span class="address-field-value"><?php echo $address->city; ?></span>
                     <button onclick="copyToClipboard('<?php echo addslashes($address->city); ?>')" 
                             class="copy-btn bg-secondary-100 hover:bg-secondary-200">
@@ -202,11 +202,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
                 <div class="address-field">
-                  <div class="address-field-label">
+                  <div class="address-field-header">
                     <div class="address-field-dot bg-success-500"></div>
                     <span class="address-field-text">State/Province</span>
                   </div>
-                  <div class="address-field-actions">
+                  <div class="address-field-content">
                     <span class="address-field-value"><?php echo $address->state; ?></span>
                     <button onclick="copyToClipboard('<?php echo addslashes($address->state); ?>')" 
                             class="copy-btn bg-success-100 hover:bg-success-200">
@@ -218,11 +218,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
                 <div class="address-field">
-                  <div class="address-field-label">
+                  <div class="address-field-header">
                     <div class="address-field-dot bg-warning-500"></div>
                     <span class="address-field-text">Zip Code</span>
                   </div>
-                  <div class="address-field-actions">
+                  <div class="address-field-content">
                     <span class="address-field-value"><?php echo $address->zip_code; ?></span>
                     <button onclick="copyToClipboard('<?php echo addslashes($address->zip_code); ?>')" 
                             class="copy-btn bg-warning-100 hover:bg-warning-200">
@@ -234,11 +234,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
                 <div class="address-field">
-                  <div class="address-field-label">
+                  <div class="address-field-header">
                     <div class="address-field-dot bg-danger-500"></div>
                     <span class="address-field-text">Phone Number</span>
                   </div>
-                  <div class="address-field-actions">
+                  <div class="address-field-content">
                     <span class="address-field-value"><?php echo $address->phone; ?></span>
                     <button onclick="copyToClipboard('<?php echo addslashes($address->phone); ?>')" 
                             class="copy-btn bg-danger-100 hover:bg-danger-200">

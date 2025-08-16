@@ -124,26 +124,7 @@
       </a>
     </div>
   </div>
-</nav>
-
-<style>
-.mobile-nav-link {
-  @apply flex items-center p-4 rounded-xl border transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline;
-}
-
-.mobile-nav-link img,
-.mobile-nav-link svg {
-  @apply flex-shrink-0;
-}
-
-.mobile-nav-link span {
-  @apply font-semibold text-base flex-1 ml-3;
-}
-
-.mobile-nav-link svg:last-child {
-  @apply ml-auto;
-}
-</style>
+ </nav>
 
 <script>
 function toggleMenu() {
