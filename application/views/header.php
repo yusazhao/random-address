@@ -14,7 +14,7 @@
       
       <!-- Logo -->
       <div>
-        <a href="<?php echo base_url();?>" class="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors duration-200">
+        <a href="<?php echo base_url();?>" class="text-2xl lg:text-3xl font-bold text-primary-600 hover:text-primary-700 transition-colors duration-200">
           RandomAddress
         </a>
       </div>
