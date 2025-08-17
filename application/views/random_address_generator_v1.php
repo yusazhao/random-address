@@ -394,6 +394,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                   <div class="country-info">
                     <span class="country-name"><?php echo $row->country; ?></span>
+                    <span class="random-address-text">Random Address</span>
                   </div>
                 </div>
               </a>

@@ -83,23 +83,23 @@
   }
   
   .country-card-content {
-    @apply flex items-center gap-4;
+    @apply flex justify-center items-center gap-4;
   }
   
   .country-flag {
-    @apply flex-shrink-0;
+    @apply flex justify-center items-center w-14 h-10;
   }
   
   .country-flag img {
-    @apply w-14 h-10 object-cover rounded shadow-sm flex-shrink-0;
+    @apply w-14 h-10 object-cover rounded shadow-sm;
   }
   
   .country-info {
-    @apply min-w-0 flex-1;
+    @apply flex flex-col justify-start items-start min-w-0 flex-1;
   }
   
   .country-name {
-    @apply block font-semibold text-gray-700 mb-1;
+    @apply block font-semibold text-gray-700 mb-1 whitespace-nowrap;
   }
   
   .random-address-text {
@@ -176,7 +176,7 @@
   
   /* Grid Layouts */
   .grid-countries {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4;
   }
   
   .grid-states {
