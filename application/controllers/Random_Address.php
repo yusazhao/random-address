@@ -18,6 +18,95 @@ class Random_Address extends CI_Controller {
 	}
 
 	/**
+	 * 根据国家格式化生日显示
+	 * @param string $birthday 原始生日格式 (YYYY-MM-DD)
+	 * @param string $country_code 国家代码
+	 * @return string 格式化后的生日
+	 */
+	private function format_birthday_by_country($birthday, $country_code) {
+		if (empty($birthday)) {
+			return '';
+		}
+
+		// 解析日期
+		$date_parts = explode('-', $birthday);
+		if (count($date_parts) !== 3) {
+			return $birthday; // 如果格式不正确，返回原值
+		}
+
+		$year = $date_parts[0];
+		$month = $date_parts[1];
+		$day = $date_parts[2];
+
+		// 月份名称数组
+		$months = array(
+			'01' => 'January', '02' => 'February', '03' => 'March', '04' => 'April',
+			'05' => 'May', '06' => 'June', '07' => 'July', '08' => 'August',
+			'09' => 'September', '10' => 'October', '11' => 'November', '12' => 'December'
+		);
+
+		$month_name = $months[$month] ?? $month;
+
+		// 根据国家代码格式化
+		switch (strtoupper($country_code)) {
+			case 'US':
+			case 'CA':
+				// 美国/加拿大: Month Day, Year (April 18, 1982)
+				return $month_name . ' ' . intval($day) . ', ' . $year;
+			
+			case 'GB':
+			case 'UK':
+				// 英国: Day Month Year (18 April 1982)
+				return intval($day) . ' ' . $month_name . ' ' . $year;
+			
+			case 'DE':
+			case 'AT':
+			case 'CH':
+				// 德国/奥地利/瑞士: Day.Month.Year (18.04.1982)
+				return intval($day) . '.' . intval($month) . '.' . $year;
+			
+			case 'FR':
+			case 'BE':
+			case 'LU':
+				// 法国/比利时/卢森堡: Day/Month/Year (18/04/1982)
+				return intval($day) . '/' . intval($month) . '/' . $year;
+			
+			case 'IT':
+			case 'ES':
+			case 'PT':
+				// 意大利/西班牙/葡萄牙: Day-Month-Year (18-04-1982)
+				return intval($day) . '-' . intval($month) . '-' . $year;
+			
+			case 'JP':
+				// 日本: Year年Month月Day日 (1982年4月18日)
+				return $year . '年' . intval($month) . '月' . intval($day) . '日';
+			
+			case 'KR':
+				// 韩国: Year년 Month월 Day일 (1982년 4월 18일)
+				return $year . '년 ' . intval($month) . '월 ' . intval($day) . '일';
+			
+			case 'CN':
+			case 'TW':
+			case 'HK':
+				// 中国/台湾/香港: Year年Month月Day日 (1982年4月18日)
+				return $year . '年' . intval($month) . '月' . intval($day) . '日';
+			
+			case 'AU':
+			case 'NZ':
+				// 澳大利亚/新西兰: Day Month Year (18 April 1982) - 类似英国
+				return intval($day) . ' ' . $month_name . ' ' . $year;
+			
+			case 'IN':
+				// 印度: Day-Month-Year (18-04-1982) - 类似欧洲
+				return intval($day) . '-' . intval($month) . '-' . $year;
+			
+			default:
+				// 默认格式: YYYY-MM-DD
+				return $birthday;
+		}
+	}
+
+	/**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
@@ -64,6 +153,11 @@ class Random_Address extends CI_Controller {
 		if($person_randomID && $person_randomID->min_id !== null) {
 			$person_random_id = mt_rand($person_randomID->min_id, $person_randomID->max_id);
 			$person = $this->Random_Address_model->get_person_profile(strtolower($country_code),'',$person_random_id);
+			
+			// 格式化生日
+			if($person && isset($person->birthday)) {
+				$person->birthday = $this->format_birthday_by_country($person->birthday, $country_code);
+			}
 		}
 
 		// 简化信用卡信息获取
@@ -146,6 +240,11 @@ class Random_Address extends CI_Controller {
 		if($person_randomID && $person_randomID->min_id !== null) {
 			$person_random_id = mt_rand($person_randomID->min_id, $person_randomID->max_id);
 			$person = $this->Random_Address_model->get_person_profile(strtolower($country_code),'',$person_random_id);
+			
+			// 格式化生日
+			if($person && isset($person->birthday)) {
+				$person->birthday = $this->format_birthday_by_country($person->birthday, $country_code);
+			}
 		}
 
 
@@ -231,6 +330,11 @@ class Random_Address extends CI_Controller {
 		if($person_randomID && $person_randomID->min_id !== null) {
 			$person_random_id = mt_rand($person_randomID->min_id, $person_randomID->max_id);
 			$person = $this->Random_Address_model->get_person_profile(strtolower($country_code),'',$person_random_id);
+			
+			// 格式化生日
+			if($person && isset($person->birthday)) {
+				$person->birthday = $this->format_birthday_by_country($person->birthday, $country_code);
+			}
 		}
 
 		// 获取信用卡信息
