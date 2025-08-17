@@ -83,7 +83,7 @@
   }
   
   .country-card-content {
-    @apply flex justify-center items-center gap-4;
+    @apply flex justify-center items-center gap-0;
   }
   
   .country-flag {
@@ -95,7 +95,7 @@
   }
   
   .country-info {
-    @apply flex flex-col justify-start items-start min-w-0 flex-1;
+    @apply flex flex-col justify-center items-center min-w-0 flex-1;
   }
   
   .country-name {
