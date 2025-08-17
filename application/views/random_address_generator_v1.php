@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container-main pt-8 pb-4">
       <!-- Breadcrumb Navigation -->
       <nav class="mb-8" aria-label="Breadcrumb">
-        <div class="flex items-center flex-wrap gap-1 text-base font-bold text-gray-700">
+        <div class="flex items-center flex-wrap gap-1 text-base sm:text-lg lg:text-xl font-bold text-gray-700">
           <a href="<?php echo base_url(); ?>" class="breadcrumb-link">Home</a>
           <span class="breadcrumb-separator">/</span>
           <?php if(isset($is_city_page) && $is_city_page): ?>
