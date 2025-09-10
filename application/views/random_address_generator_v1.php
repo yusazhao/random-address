@@ -39,6 +39,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta name="twitter:description" content="Generate random addresses with street, city, state, ZIP code for testing purposes." />
 
   <link rel="stylesheet" href="<?php echo base_url();?>static/css/tailwind.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="<?php echo base_url();?>static/img/icon.png">
+  <link rel="shortcut icon" type="image/png" href="<?php echo base_url();?>static/img/icon.png">
+  <link rel="apple-touch-icon" href="<?php echo base_url();?>static/img/icon.png">
 </head>
 <body class="bg-gradient-hero min-h-screen flex flex-col">
 
