@@ -274,7 +274,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </svg>
                   </div>
                   <div class="flex items-center justify-center gap-3 mb-2">
-                    <h3 class="person-name"><?php echo $person->full_name; ?></h3>
+                    <span class="person-name"><?php echo $person->full_name; ?></span>
                     <button onclick="copyToClipboard('<?php echo addslashes($person->full_name); ?>')" 
                             class="copy-btn bg-success-100 hover:bg-success-200 p-2 rounded-lg">
                       <svg class="w-4 h-4 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
