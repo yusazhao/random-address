@@ -64,7 +64,7 @@ $route['random-address-generator/(:any)'] = 'Random_Address/index';
 
 // Other pages
 $route['about-us'] = 'Footprint/aboutus';
-$route['terms'] = 'Footprint/termsofuse';
+$route['terms-of-use'] = 'Footprint/termsofuse';
 $route['privacy-policy'] = 'Footprint/privacypolicy';
 $route['cookie-policy'] = 'Footprint/cookiepolicy';
 
