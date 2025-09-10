@@ -332,12 +332,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($row->country_code);?>-<?php echo strtolower($row->state_code); ?>" 
                  class="group block p-4 bg-white hover:bg-gradient-to-br hover:from-primary-50 hover:to-secondary-50 rounded-xl border border-gray-200 hover:border-primary-300 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline text-center">
                 <div class="space-y-1">
-                  <div class="text-gray-800 group-hover:text-primary-700 font-bold text-lg lg:text-xl leading-tight">
-                    <?php echo $row->state; ?>
-                  </div>
-                  <div class="text-gray-500 group-hover:text-primary-500 text-xs font-medium whitespace-nowrap">
-                    Random Address
-                  </div>
+                  <h3 class="space-y-1">
+                    <span class="block text-gray-800 group-hover:text-primary-700 font-bold text-lg lg:text-xl leading-tight">
+                      <?php echo $row->state; ?>
+                    </span>
+                    <span class="block text-gray-500 group-hover:text-primary-500 text-xs font-medium whitespace-nowrap">
+                      Random Address
+                    </span>
+                  </h3>
                 </div>
               </a>
             <?php endforeach; ?>
@@ -356,12 +358,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <a href="<?php echo base_url();?>random-address-generator/<?php echo strtolower($city->country_code);?>-<?php echo strtolower($city->state_code);?>/<?php echo $city->city_slug;?>" 
                  class="group block p-4 bg-white hover:bg-gradient-to-br hover:from-success-50 hover:to-success-100 rounded-xl border border-gray-200 hover:border-success-300 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 no-underline text-center">
                 <div class="space-y-1">
-                  <div class="text-gray-800 group-hover:text-success-700 font-bold text-lg lg:text-xl leading-tight">
-                    <?php echo htmlspecialchars($city->city); ?>
-                  </div>
-                  <div class="text-gray-500 group-hover:text-success-500 text-xs font-medium whitespace-nowrap">
-                    Random Address
-                  </div>
+                  <h3 class="space-y-1">
+                    <span class="block text-gray-800 group-hover:text-success-700 font-bold text-lg lg:text-xl leading-tight">
+                      <?php echo htmlspecialchars($city->city); ?>
+                    </span>
+                    <span class="block text-gray-500 group-hover:text-success-500 text-xs font-medium whitespace-nowrap">
+                      Random Address
+                    </span>
+                  </h3>
                 </div>
               </a>
             <?php endforeach; ?>
@@ -393,8 +397,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          onerror="this.src='<?php echo base_url();?>static/img/flags/Unknown_200_150.svg'">
                   </div>
                   <div class="country-info">
-                    <span class="country-name"><?php echo $row->country; ?></span>
-                    <span class="random-address-text">Random Address</span>
+                    <h3 class="space-y-1">
+                      <span class="country-name block"><?php echo $row->country; ?></span>
+                      <span class="random-address-text block">Random Address</span>
+                    </h3>
                   </div>
                 </div>
               </a>
