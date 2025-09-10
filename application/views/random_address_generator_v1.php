@@ -9,11 +9,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php if(isset($is_city_page) && $is_city_page): ?>
-    Free Random <?php echo $address->city; ?>, <?php echo strtoupper($address->state_code); ?> address generator | Real & Valid
+    <?php echo $address->city; ?>, <?php echo strtoupper($address->state_code); ?> Random Address Generator | Random Address
   <?php elseif($is_state_page): ?>
-    Free Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator | For Any State
+    <?php echo $address->state; ?>, <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Random Address Generator | Random Address
   <?php else: ?>
-    Free Random <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Address Generator
+    <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> Random Address Generator | Random Address
   <?php endif; ?></title>
 
   <meta name="description" content="High-quality random address generator provides real <?php if(array_key_exists($address->country_code,$tier1_array)){ echo $tier1_array[$address->country_code]; }else{echo $address->country; } ?> addresses that ensure 100% success for your account registrations. Simply click to copy and paste." />
