@@ -490,15 +490,106 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
               </div>
 
-              <div class="text-center">
-                <h3 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">How Our Generator Stands Out</h3>
+              <!-- Added SEO-friendly FAQs (h3 level) -->
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-primary-100">
+                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"></path>
+                    </svg>
+                  </div>
+                  Do you support random addresses for multiple countries, states, and cities?
+                </h3>
                 <p class="faq-content">
-                  What makes our Random Address Generator different is that our data is reliable, and the addresses provided are for real, publicly accessible locations.
-                </p>
-                <p class="faq-content mt-4">
-                  Thanks for using the Random Address Generator!
+                  We support 50+ countries, all U.S. states, and major cities, all generated with a single click.
                 </p>
               </div>
+
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-secondary-100">
+                    <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  Do ZIP codes correctly match their city and state?
+                </h3>
+                <p class="faq-content">
+                  ZIP code, city, and state are mutually consistent and validated against real, publicly available datasets, helping you pass form validation and risk checks.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-warning-100">
+                    <svg class="w-5 h-5 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 9v2m0 8a9 9 0 110-18 9 9 0 010 18z"></path>
+                    </svg>
+                  </div>
+                  Can these addresses be used for sign-ups, testing, or e-commerce shipping?
+                </h3>
+                <p class="faq-content">
+                  Great for sign-ups, testing, form validation, and risk-control integration; not recommended for real shipments or any unlawful use.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-success-100">
+                    <svg class="w-5 h-5 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  Where does your data come from, and how often is it updated?
+                </h3>
+                <p class="faq-content">
+                  Our data is sourced from publicly accessible datasets and reputable references, with periodic consistency checks and updates to ensure availability and accuracy.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-info-100">
+                    <svg class="w-5 h-5 text-info-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h10M4 18h6"></path>
+                    </svg>
+                  </div>
+                  Can I filter by country/state/city or choose US/international formats?
+                </h3>
+                <p class="faq-content">
+                  Yes. Filter by country, state, or city, and output common US or international formats (street, city, state, ZIP separated) for easier system integration.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-danger-100">
+                    <svg class="w-5 h-5 text-danger-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.567-3 3.5S10.343 15 12 15s3-1.567 3-3.5S13.657 8 12 8zm0 0V6m0 9v2m-7 1h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                  </div>
+                  Is this tool free? Can I use it commercially?
+                </h3>
+                <p class="faq-content">
+                  Yes — everything is free to use. You can use the tool for personal and commercial projects. We don’t offer an API at the moment, and all features are available directly in the UI.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="faq-title">
+                  <div class="faq-icon bg-secondary-100">
+                    <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-7 4h8M9 8h6M5 7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7z"></path>
+                    </svg>
+                  </div>
+                  Does it work on desktop and mobile with one-click copy?
+                </h3>
+                <p class="faq-content">
+                  Yes. It’s optimized for both desktop and mobile. Every field supports one-click copy with a consistent experience.
+                </p>
+              </div>
+
+              
             </div>
           </div>
         </div>
